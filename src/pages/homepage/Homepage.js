@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
-import Navigation from '../../components/navigation';
 import VideoBg from "../../assets/football-video.mp4";
 
 const Homepage = () => {

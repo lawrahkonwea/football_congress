@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-
+import React, { useState } from 'react';
+import Participant from './navComponents/Participant';
+import Tournament from './navComponents/Tournament';
 import { FiMenu } from 'react-icons/fi';
 import { BiLogoDribbble } from 'react-icons/bi';
 import { RiCloseLine } from 'react-icons/ri';
@@ -13,6 +14,9 @@ import SearchBar from './searchbar';
 
 const Navigation = () => {
   const [sideMenuOpen, setMenu] = useState(false);
+  const [showParticipation, setShowParticipation] = useState(false);
+  const [showTournament, setShowTournament] = useState(false);
+  const [modalActive, setModalActive] = useState(false);
 
   const navlinks = [
     {
@@ -33,10 +37,28 @@ const Navigation = () => {
     }
   ];
 
+  const handleParticipationModal = () => {
+    setShowParticipation(!showParticipation);
+    setShowTournament(false);
+    setModalActive(true);
+  }
+
+  const handleTournamentModal = () => {
+    setShowTournament(!showTournament)
+    setShowParticipation(false)
+    setModalActive(true);
+  }
+
+  const closeModal = () => {
+    setShowTournament(false);
+    setShowParticipation(false);
+    setModalActive(false);
+  }
+
   return (
     <>
 
-    {/* top section before nav */}
+      {/* top section before nav */}
       <main className='relative'>
         <div className='flex justify-between items-center bg bg-yellow-400 w-full  p-2 px-16 text-white font-sans'>
           <div className='hidden lg:flex text-3xl'> <FcGlobe /></div>
@@ -55,7 +77,8 @@ const Navigation = () => {
               {/* logo */}
               <FiMenu onClick={() => setMenu(true)} className='text-3xl cursor-pointer lg:hidden' />
 
-              <NavLink href={"/"} className='text-4xl font-mono '><img className='w-20' src={logo} alt='ball' />
+              <NavLink href={"/"} className='text-4xl font-mono '>
+                <img className='w-20' src={logo} alt='ball' />
               </NavLink>
             </section>
             {navlinks.map((d, i) => (
@@ -63,6 +86,13 @@ const Navigation = () => {
                 key={i}
                 className="hidden lg:block text-blue-100 hover:bg-blue-400 px-4 py-2 rounded-md transition duration-500 ease-in-out "
                 href={d.link}
+                onClick={() => {
+                  if (d.label === "Your Participation") {
+                    handleParticipationModal();
+                  } else if (d.label === "Tournament") {
+                    handleTournamentModal();
+                  }
+                }}
               >
                 {d.label}
               </NavLink>
@@ -97,6 +127,17 @@ const Navigation = () => {
             <BiLogoDribbble className='text-white' />
           </section>
         </nav>
+        {showParticipation && (
+          <Participant />
+        )}
+        {showTournament && (
+          <Tournament />
+        )}
+        {
+          modalActive && (
+            <button onClick={closeModal} className="fixed w-screen h-screen top-0 bottom-0 left-0 closeModal_button">&apos;</button>
+          )
+        }
         <hr />
       </main>
     </>

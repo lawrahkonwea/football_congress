@@ -23,3 +23,8 @@ video {
   height: 100%;
   object-fit: cover;
 }
+
+.closeModal_button {
+  cursor: auto;
+  z-index: 510;
+}
