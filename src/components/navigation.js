@@ -5,6 +5,7 @@ import { FiMenu } from 'react-icons/fi';
 import { BiLogoDribbble } from 'react-icons/bi';
 import { RiCloseLine } from 'react-icons/ri';
 import { FcGlobe } from "react-icons/fc";
+import { RiArrowDropDownLine } from "react-icons/ri";
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/caf-logo.png';
 import clsx from 'clsx';
@@ -82,20 +83,23 @@ const Navigation = () => {
               </NavLink>
             </section>
             {navlinks.map((d, i) => (
-              <NavLink
-                key={i}
-                className="hidden lg:block text-blue-100 hover:bg-blue-400 px-4 py-2 rounded-md transition duration-500 ease-in-out "
-                href={d.link}
-                onClick={() => {
-                  if (d.label === "Your Participation") {
-                    handleParticipationModal();
-                  } else if (d.label === "Tournament") {
-                    handleTournamentModal();
-                  }
-                }}
-              >
-                {d.label}
-              </NavLink>
+             <NavLink
+             key={i}
+             className="flex items-center text-blue-100 hover:bg-blue-400 px-4 py-2 rounded-md transition duration-500 ease-in-out"
+             to={d.link}
+             onClick={() => {
+               if (d.label === "Your Participation") {
+                 handleParticipationModal();
+               } else if (d.label === "Tournament") {
+                 handleTournamentModal();
+               }
+             }}
+           >
+             {d.label}
+             {d.label === "Your Participation" || d.label === "Tournament" ? (
+               <RiArrowDropDownLine className='ml-2 text-4xl' />
+             ) : null}
+           </NavLink>
             ))}
 
           </div>
