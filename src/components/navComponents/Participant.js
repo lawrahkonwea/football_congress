@@ -3,7 +3,7 @@ import React from 'react';
 const Participant = () => {
   return (
     <div>
-      Participant for here
+      Participant dey for here
     </div>
   );
 };
