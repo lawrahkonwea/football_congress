@@ -4,7 +4,7 @@ import { FaExclamationCircle } from "react-icons/fa";
 const Participant = () => {
   return (
 
-    <div className='hidden lg:block bg-white h-full pb-8 pt-5'>
+    <div className='nav-participant hidden lg:block bg-white h-full pb-10 pt-5'>
       <ul className='flex'>
         <li className='ml-16 flex items-start'>
           <FaExclamationCircle className='text-4xl mt-1 mr-4' />

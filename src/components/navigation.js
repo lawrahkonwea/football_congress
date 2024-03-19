@@ -71,9 +71,9 @@ const Navigation = () => {
           </div>
         </div>
 
-        <nav className='flex justify-between px-8 items-center lg:px-10 '>
+        <nav className='flex bg-sky-700 justify-between  px-8 items-center lg:px-10 '>
           <div className="flex items-center gap-8">
-            <section className='flex items-center gap-4'>
+            <section className='flex items-center gap-4 '>
 
               {/* logo */}
               <FiMenu onClick={() => setMenu(true)} className='text-3xl cursor-pointer lg:hidden' />
@@ -85,7 +85,7 @@ const Navigation = () => {
             {navlinks.map((d, i) => (
              <NavLink
              key={i}
-             className="flex items-center text-blue-100 hover:bg-blue-400 px-4 py-2 rounded-md transition duration-500 ease-in-out"
+             className=" hidden lg:flex flex items-center text-blue-100 hover:bg-blue-400 px-4 py-2 rounded-md transition duration-500 ease-in-out"
              to={d.link}
              onClick={() => {
                if (d.label === "Your Participation") {
@@ -107,7 +107,7 @@ const Navigation = () => {
 
           {/* sidebar mobile menu */}
           <div className={clsx(
-            'fixed h-full w-screen lg:hidden  top-0 right-0 -translate-x-full transition-all', sideMenuOpen && 'translate-x-0'
+            'fixed  h-full w-screen lg:hidden  top-0 right-0 -translate-x-full transition-all', sideMenuOpen && 'translate-x-0'
           )}
           >
 
@@ -139,7 +139,7 @@ const Navigation = () => {
         )}
         {
           modalActive && (
-            <button onClick={closeModal} className="fixed w-screen h-screen top-0 bottom-0 left-0 closeModal_button">&apos;</button>
+            <button onClick={closeModal} className=" w-screen h-screen top-0 bottom-0 left-0 closeModal_button">&apos;</button>
           )
         }
         <hr />

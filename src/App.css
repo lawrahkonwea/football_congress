@@ -26,5 +26,9 @@ video {
 
 .closeModal_button {
   cursor: auto;
-  z-index: 510;
+  z-index: 10;
+}
+
+.nav-participant {
+  z-index: 20;
 }

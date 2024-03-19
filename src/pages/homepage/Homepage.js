@@ -1,9 +1,39 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import VideoBg from "../../assets/football-video.mp4";
+import Femaleaction from "../../assets/femaleaction.jpg";
+import Streetphoto from "../../assets/streetphoto.jpg";
+import Throwplayer from "../../assets/throwplayer.jpg";
+import Femaleplayer from "../../assets/femaleplayer.jpg";
+
+
 
 const Homepage = () => {
+ 
+  const [cards] = useState([
+  { id: 1, title: 'Card 1', image: Throwplayer, text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  { id: 2, title: 'Card 2', image: Streetphoto, text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.' },
+  { id: 3, title: 'Card 3', image: Femaleplayer, text: 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.' },
+  { id: 4, title: 'Card 4', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+  { id: 5, title: 'Card 4', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+  { id: 6, title: 'Card 4', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+  { id: 7, title: 'Card 4', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' }
+]);
+
+const [startIndex, setStartIndex] = useState(0);
+
+const handleNext = () => {
+  setStartIndex(prevIndex => Math.min(prevIndex + 2, cards.length - 3));
+};
+
+const handlePrev = () => {
+  setStartIndex(prevIndex => Math.max(prevIndex - 2, 0));
+};
+
+
+
+
   const location = useLocation();
 
   useEffect(() => {
@@ -31,9 +61,54 @@ const Homepage = () => {
           <h1 className=' text-6xl text-center text-yellow-400'>Empowerment Congress</h1>
         </div>
       </div>
-      <section className="px-6">
-        <div className="my-4">
-          <p className="font-extrabold text-[20px]">Latest News</p>
+      <section>
+      <div className="flex flex-col w-full items-center ">
+      <div className="flex w-full h-full flex-wrap justify-center   p-5">
+        {cards.slice(startIndex, startIndex + 3).map(card => (
+          <div key={card.id} className="bg-gray-400 m-4 lg:w-96 h-screen">
+            <img src={card.image} alt={card.title} className="justify-center rounded-md" />
+            <p className="text-center mt-2 text-xl font-semibold justify-self-start">{card.title}</p>
+            <p className="text-center mt-2 text-gray-900 items-start text-base ">{card.text}</p>
+          </div>
+        ))}
+      </div>
+      {cards.length > 2 && (
+        <div className="mt-4 flex justify-center">
+          <button
+            className={`px-2 py-1 mr-2 rounded-full border border-gray-400 ${startIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
+            onClick={handlePrev}
+            disabled={startIndex === 0}
+          >
+            Prev
+          </button>
+          <button
+            className={`px-2 py-1 rounded-full border border-gray-400 ${startIndex + 3 >= cards.length ? 'opacity-50 cursor-not-allowed' : ''}`}
+            onClick={handleNext}
+            disabled={startIndex + 2 >= cards.length}
+          >
+            Next
+          </button>
+        </div>
+      )}
+    </div>
+
+
+    
+      </section>
+      <section className="mx-auto bg-sky-950 my-8 md:my-16 py-8 md:py-16 px-4 md:px-8 lg:px-80 xl:px-20 rounded-2xl max-w-6xl ">
+        <div className="my-2 md:my-4">
+          <p className="font-extrabold text-lg md:text-2xl lg:text-3xl xl:text-4xl text-center text-white">Our Vision</p>
+        </div>
+        <div>
+          <p className="text-sm md:text-base lg:text-base xl:text-base text-center text-blue-200 px-16">
+            Our Vision is to empower individuals and team football players in Nigeria and beyond for a common goal regards to talent/skills and dreams on football to come true.
+            <br /><br />
+            We want to advance grassroots football players through founder metal legal perspective and legitimate means by removing them from behind the camera to playing front of the camera.
+            <br /><br />
+            We have alliances with coaches and big football team players in Africa and beyond on special offers for the great academy, tournament, and scouting programs.
+            <br /><br />
+            We have teams on call around the clock that can take care and test the agility of a single player response to training guard. During our field training program, we can accommodate teams techniques that lead to external league standard.
+          </p>
         </div>
       </section>
     </motion.div>
