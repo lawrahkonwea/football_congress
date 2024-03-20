@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import VideoBg from "../../assets/football-video.mp4";
@@ -11,8 +11,7 @@ import Tournament from '../../assets/tornament.jpg';
 import Screening from '../../assets/screening-football.jpg'
 import Femaletournament from "../../assets/female-tornament.jpg";
 import Disabled from "../../assets/disabled.jpg";
-
-
+import "./index.css";
 
 const Homepage = () => {
 
@@ -21,23 +20,55 @@ const Homepage = () => {
     { id: 2, title: 'Card 2', image: Streetphoto, text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.' },
     { id: 3, title: 'Card 3', image: Femaleplayer, text: 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.' },
     { id: 4, title: 'Card 4', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
-    { id: 5, title: 'Card 4', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
-    { id: 6, title: 'Card 4', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
-    { id: 7, title: 'Card 4', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' }
+    { id: 5, title: 'Card 5', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+    { id: 6, title: 'Card 6', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+    { id: 7, title: 'Card 7', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+    { id: 8, title: 'Card 8', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+    { id: 9, title: 'Card 9', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+    { id: 10, title: 'Card 10', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+    { id: 11, title: 'Card 11', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+    { id: 12, title: 'Card 12', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+    { id: 13, title: 'Card 13', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+    { id: 14, title: 'Card 14', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
   ]);
 
-  const [startIndex, setStartIndex] = useState(0);
-
-  const handleNext = () => {
-    setStartIndex(prevIndex => Math.min(prevIndex + 2, cards.length - 3));
-  };
+  const boxRef = useRef(null);
+  const [isPrevDisabled, setPrevDisabled] = useState(true);
+  const [isNextDisabled, setNextDisabled] = useState(false);
 
   const handlePrev = () => {
-    setStartIndex(prevIndex => Math.max(prevIndex - 2, 0));
+    const box = boxRef.current;
+    if (box) {
+      // const width = box.clientWidth;
+      box.scrollLeft -= 450;
+    }
   };
 
+  const handleNext = () => {
+    const box = boxRef.current;
+    if (box) {
+      // const width = box.clientWidth;
+      box.scrollLeft += 450;
+    }
+  };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const box = boxRef.current;
+      if (box) {
+        setPrevDisabled(box.scrollLeft === 0);
+        setNextDisabled(box.scrollLeft + box.clientWidth >= box.scrollWidth);
+      }
+    };
 
+    const box = boxRef.current;
+    if (box) {
+      box.addEventListener('scroll', handleScroll);
+      return () => {
+        box.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, []);
 
   const location = useLocation();
 
@@ -72,37 +103,32 @@ const Homepage = () => {
           <div>
             <h1 className='font-extrabold text-4xl items-start mx-8 mt-3 px-8'>Latest News</h1>
           </div>
-          <div className="flex w-full h-full flex-wrap justify-center p-5">
-            {cards.slice(startIndex, startIndex + 3).map(card => (
-              <div key={card.id} className="custom-shadow bg-white m-4 lg:w-96 h-screen rounded-lg ">
-                <img src={card.image} alt={card.title} className="justify-center rounded-md" />
-                <p className="text-center mt-2 text-xl font-semibold justify-self-start">{card.title}</p>
-                <p className="text-center mt-2 text-gray-900 items-start text-base ">{card.text}</p>
-              </div>
-            ))}
-          </div>
-          {cards.length > 2 && (
-            <div className="mt-4 flex justify-center">
-              <button
-                className={`px-2 py-1 mr-2 rounded-full border border-gray-400 ${startIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
-                onClick={handlePrev}
-                disabled={startIndex === 0}
-              >
-                Prev
-              </button>
-              <button
-                className={`px-2 py-1 rounded-full border border-gray-400 ${startIndex + 3 >= cards.length ? 'opacity-50 cursor-not-allowed' : ''}`}
-                onClick={handleNext}
-                disabled={startIndex + 2 >= cards.length}
-              >
-                Next
-              </button>
+          <div className="flex items-center px-4 gap-2">
+            <button
+              className={`px-2 py-1 mr-2 z-50 rounded-full border border-gray-400 ${isPrevDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+              onClick={handlePrev}
+              disabled={isPrevDisabled}
+            >
+              &larr;
+            </button>
+            <div className="flex swiper-wrapper ml-[-10%] md:ml-[-3%] w-full overflow-x-auto xscrollbar h-full p-5" ref={boxRef}>
+              {cards.map(card => (
+                <div key={card.id} className="custom-shadow card_container bg-white m-4 w-[200px] h-screen rounded-lg ">
+                  <img src={card.image} alt={card.title} className="justify-center rounded-md" />
+                  <p className="text-center mt-2 text-xl font-semibold">{card.title}</p>
+                  <p className="text-center mt-2 text-gray-900">{card.text}</p>
+                </div>
+              ))}
             </div>
-          )}
+            <button
+              className={`px-2 py-1 rounded-full border border-gray-400 ${isNextDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+              onClick={handleNext}
+              disabled={isNextDisabled}
+            >
+              &rarr;
+            </button>
+          </div>
         </div>
-
-
-
       </section>
       <section className="mx-auto bg-sky-950 my-8 md:my-16 py-8 md:py-16 px-4 md:px-8 lg:px-80 xl:px-20 rounded-2xl max-w-6xl ">
         <div className="my-2 md:my-4">
@@ -157,7 +183,7 @@ const Homepage = () => {
           </div>
         </div>
 
-      
+
       </section>
     </motion.div>
   );
