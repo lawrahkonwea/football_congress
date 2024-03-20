@@ -7,6 +7,7 @@ import Streetphoto from "../../assets/streetphoto.jpg";
 import Throwplayer from "../../assets/throwplayer.jpg";
 import Femaleplayer from "../../assets/femaleplayer.jpg";
 import { FaExclamationCircle } from "react-icons/fa";
+import { BiLogoDribbble } from 'react-icons/bi';
 import Tournament from '../../assets/tornament.jpg';
 import Screening from '../../assets/screening-football.jpg'
 import Femaletournament from "../../assets/female-tornament.jpg";
@@ -24,12 +25,6 @@ const Homepage = () => {
     { id: 6, title: 'Card 6', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
     { id: 7, title: 'Card 7', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
     { id: 8, title: 'Card 8', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
-    { id: 9, title: 'Card 9', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
-    { id: 10, title: 'Card 10', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
-    { id: 11, title: 'Card 11', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
-    { id: 12, title: 'Card 12', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
-    { id: 13, title: 'Card 13', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
-    { id: 14, title: 'Card 14', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
   ]);
 
   const boxRef = useRef(null);
@@ -81,6 +76,48 @@ const Homepage = () => {
     }
   }, [location]);
 
+  const mainEvents = [
+    {
+      img: Tournament,
+      icon: <FaExclamationCircle className="w-8 h-8 mr-2" />,
+      title: "Tournament Hosting",
+      id: 1,
+    },
+    {
+      img: Screening,
+      icon: <FaExclamationCircle alt="logo" className="w-8 h-8 mr-2" />,
+      title: "Screening and scouting",
+      id: 2,
+    },
+    {
+      img: Femaletournament,
+      icon: <FaExclamationCircle className="w-8 h-8 mr-2" />,
+      title: "Female Tournaments",
+      id: 3,
+    },
+    {
+      img: Disabled,
+      icon: <FaExclamationCircle alt="logo" className="w-8 h-8 mr-2" />,
+      title: "Amputee/Disabled",
+      id: 4,
+    },
+  ]
+
+  const helpOpt = [
+    {
+      title: <>F&amp;Q</>,
+      icon: <BiLogoDribbble className='text-white' />,
+    },
+    {
+      title: <>Account</>,
+      icon: <BiLogoDribbble className='text-white' />,
+    },
+    {
+      title: <>Contact us</>,
+      icon: <BiLogoDribbble className='text-white' />,
+    },
+  ]
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 200 }}
@@ -89,7 +126,6 @@ const Homepage = () => {
       transition={{ delay: 0.25, type: 'spring' }}
       className="landing"
     >
-
       <section className='bg-gradient-to-r from-blue-50 to-blue-sky-400'>
         <div className="w-full video">
           <div className='overlay'></div>
@@ -97,13 +133,31 @@ const Homepage = () => {
           <div className="font-mono content absolute w-full h-full flex top-0 items-center flex-col justify-center">
             <h2 className=' text-4xl text-white text-center pb-12'>African Fooball</h2>
             <h1 className=' text-6xl text-center text-yellow-400'>Empowerment Congress</h1>
+            <div className="flex items-center justify-center gap-4 mt-4">
+              <p>Icons</p>
+              <p>Icons</p>
+              <p>Icons</p>
+            </div>
+          </div>
+          <div className="bg-sky-800">
+            <p className="text-center px-4 py-[10px] text-[#fff]">JULY 14TH-20TH • 2024 • GOTHENBURG, SWEDEN</p>
+          </div>
+          <div className="bg-sky-700 flex justify-around items-center gap-4">
+            {helpOpt.map((opt) => (
+              <div className="px-4 py-4 flex justify-center flex-col">
+                <p className="m-auto pb-[2px]">{opt.icon}</p>
+                <p className="text-[#fff]">{opt.title}</p>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="flex flex-col w-full  mt-8 ">
+      </section>
+      <div className="px-4">
+        <div className="flex flex-col w-full  mt-[40%] md:mt-[13%] ">
           <div>
-            <h1 className='font-extrabold text-4xl items-start mx-8 mt-3 px-8'>Latest News</h1>
+            <h1 className='font-extrabold text-4xl items-start mx-8 mt-3'>Latest News</h1>
           </div>
-          <div className="flex items-center px-4 gap-2">
+          <div className="flex items-center gap-2">
             <button
               className={`px-2 py-1 mr-2 z-50 rounded-full border border-gray-400 ${isPrevDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
               onClick={handlePrev}
@@ -113,10 +167,12 @@ const Homepage = () => {
             </button>
             <div className="flex swiper-wrapper ml-[-10%] md:ml-[-3%] w-full overflow-x-auto xscrollbar h-full p-5" ref={boxRef}>
               {cards.map(card => (
-                <div key={card.id} className="custom-shadow card_container bg-white m-4 w-[200px] h-screen rounded-lg ">
-                  <img src={card.image} alt={card.title} className="justify-center rounded-md" />
-                  <p className="text-center mt-2 text-xl font-semibold">{card.title}</p>
-                  <p className="text-center mt-2 text-gray-900">{card.text}</p>
+                <div key={card.id} className="custom-shadow card_container bg-white m-4 w-[200px] rounded-lg ">
+                  <img src={card.image} alt={card.title} className="justify-center h-[200px] w-full rounded-md" />
+                  <div className="p-4">
+                    <p className="text-center mt-2 text-xl font-semibold">{card.title}</p>
+                    <p className="text-center mt-2 text-gray-900">{card.text}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -129,62 +185,43 @@ const Homepage = () => {
             </button>
           </div>
         </div>
-      </section>
-      <section className="mx-auto bg-sky-950 my-8 md:my-16 py-8 md:py-16 px-4 md:px-8 lg:px-80 xl:px-20 rounded-2xl max-w-6xl ">
-        <div className="my-2 md:my-4">
-          <p className="font-extrabold text-lg md:text-2xl lg:text-3xl xl:text-4xl text-center text-white">Our Vision</p>
-        </div>
-        <div>
-          <p className="text-sm md:text-base lg:text-base xl:text-base text-center text-blue-200 px-16">
-            Our Vision is to empower individuals and team football players in Nigeria and beyond for a common goal regards to talent/skills and dreams on football to come true.
-            <br /><br />
-            We want to advance grassroots football players through founder metal legal perspective and legitimate means by removing them from behind the camera to playing front of the camera.
-            <br /><br />
-            We have alliances with coaches and big football team players in Africa and beyond on special offers for the great academy, tournament, and scouting programs.
-            <br /><br />
-            We have teams on call around the clock that can take care and test the agility of a single player response to training guard. During our field training program, we can accommodate teams techniques that lead to external league standard.
-          </p>
-        </div>
-      </section>
-      <section>
-        <div className='text-center'>
-          <p className='text-blue-600 text-lg sm:text-xl md:text-2xl'>What We Do</p>
-          <h1 className='text-3xl sm:text-4xl md:text-5xl'>Our main events</h1>
-          <h3 className='mt-5 text-blue-600 text-sm sm:text-md md:text-lg mx-4 sm:mx-12 md:mx-20 md:px-12 lg:px-40 mx-36'>We believe that it is important to make a tournament a lifelong memory. With moments for everyone – moments of harmony and fellowship - moments where everyone comes together.</h3>
-        </div>
-        <div className=" grid-flow-row p-5 mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center ">
-          <div className=''>
-            <img src={Tournament} alt="action" className=" lg:w-full rounded-2xl w-full h-full max-h-60" />
-            <div className="flex items-center mt-2">
-              <FaExclamationCircle className="w-8 h-8 mr-2" />
-              <p className="text-sm font-semibold">Tournament Hosting</p>
-            </div>
+        <section className="mx-auto bg-sky-950 my-8 md:my-16 py-8 md:py-16 rounded-2xl max-w-6xl ">
+          <div className="my-2 md:my-4">
+            <p className="font-extrabold text-lg md:text-2xl lg:text-3xl xl:text-4xl text-center text-white">Our Vision</p>
           </div>
-          <div className=''>
-            <img src={Screening} alt="action" className=" lg:w-full rounded-2xl w-full h-full max-h-60 " />
-            <div className="flex items-center mt-2">
-              <FaExclamationCircle alt="Logo 2" className="w-8 h-8 mr-2" />
-              <p className="text-sm font-semibold">Screening and scouting</p>
-            </div>
+          <div>
+            <p className="text-sm md:text-base lg:text-base xl:text-base text-center text-blue-200 px-16">
+              Our Vision is to empower individuals and team football players in Nigeria and beyond for a common goal regards to talent/skills and dreams on football to come true.
+              <br /><br />
+              We want to advance grassroots football players through founder metal legal perspective and legitimate means by removing them from behind the camera to playing front of the camera.
+              <br /><br />
+              We have alliances with coaches and big football team players in Africa and beyond on special offers for the great academy, tournament, and scouting programs.
+              <br /><br />
+              We have teams on call around the clock that can take care and test the agility of a single player response to training guard. During our field training program, we can accommodate teams techniques that lead to external league standard.
+            </p>
           </div>
-          <div className=''>
-            <img src={Femaletournament} alt="action" className=" lg:w-full rounded-2xl w-full h-full max-h-60" />
-            <div className="flex items-center mt-2">
-              <FaExclamationCircle className="w-8 h-8 mr-2" />
-              <p className="text-sm font-semibold">Female Tournaments</p>
-            </div>
+        </section>
+        <section>
+          <div className='text-center'>
+            <p className='text-blue-600 text-lg sm:text-xl md:text-2xl'>What We Do</p>
+            <h1 className='text-3xl sm:text-4xl md:text-5xl'>Our main events</h1>
+            <h3 className='mt-5 text-blue-600 text-sm sm:text-md md:text-lg mx-4 sm:mx-12 md:mx-20 md:px-12 lg:px-40 mx-36'>
+              We believe that it is important to make a tournament a lifelong memory. With moments for everyone – moments of harmony and fellowship - moments where everyone comes together.
+            </h3>
           </div>
-          <div className=''>
-            <img src={Disabled} alt="action" className=" lg:w-full rounded-2xl w-full h-full max-h-60 " />
-            <div className="flex items-center mt-2">
-              <FaExclamationCircle alt="Logo 2" className="w-8 h-8 mr-2" />
-              <p className="text-sm font-semibold">Amputee/Disabled</p>
-            </div>
+          <div className="flex flex-wrap justify-center gap-6 my-8 ">
+            {mainEvents.map((evnt, index) => (
+              <div className='w-full md:w-[550px] event_container' key={index}>
+                <img src={evnt.img} alt="action" className=" lg:w-full rounded-2xl w-full h-full max-h-60" />
+                <div className="flex items-center mt-2">
+                  <>{evnt.icon}</>
+                  <p className="text-sm font-semibold">{evnt.title}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
-
-
-      </section>
+        </section>
+      </div>
     </motion.div>
   );
 };
