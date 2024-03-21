@@ -40,3 +40,12 @@ video {
 .rounded {
   border-radius: 30px;
 }
+
+
+
+@media screen and (max-width: 768px)  {
+  .main-event {
+   width: 100%;
+   flex-direction: row;
+  }
+}
