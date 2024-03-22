@@ -26,5 +26,26 @@ video {
 
 .closeModal_button {
   cursor: auto;
-  z-index: 510;
+  z-index: 10;
+}
+
+.nav-participant {
+  z-index: 20;
+}
+
+.custom-shadow {
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.5), 2px 2px 4px rgba(0, 0, 255, 0.3);
+}
+
+.rounded {
+  border-radius: 30px;
+}
+
+
+
+@media screen and (max-width: 768px)  {
+  .main-event {
+   width: 100%;
+   flex-direction: row;
+  }
 }

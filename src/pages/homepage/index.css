@@ -1,0 +1,13 @@
+.swiper-wrapper {
+  transition: transform 0.5s ease;
+  scroll-behavior: smooth;
+}
+
+.xscrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.card_container {
+  min-width: 400px;
+  flex-shrink: 0;
+}

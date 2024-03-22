@@ -5,6 +5,7 @@ import { FiMenu } from 'react-icons/fi';
 import { BiLogoDribbble } from 'react-icons/bi';
 import { RiCloseLine } from 'react-icons/ri';
 import { FcGlobe } from "react-icons/fc";
+import { RiArrowDropDownLine } from "react-icons/ri";
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/caf-logo.png';
 import clsx from 'clsx';
@@ -70,9 +71,9 @@ const Navigation = () => {
           </div>
         </div>
 
-        <nav className='flex justify-between px-8 items-center lg:px-10 '>
+        <nav className='flex bg-sky-700 justify-between  px-8 items-center lg:px-10 '>
           <div className="flex items-center gap-8">
-            <section className='flex items-center gap-4'>
+            <section className='flex items-center gap-4 '>
 
               {/* logo */}
               <FiMenu onClick={() => setMenu(true)} className='text-3xl cursor-pointer lg:hidden' />
@@ -82,20 +83,23 @@ const Navigation = () => {
               </NavLink>
             </section>
             {navlinks.map((d, i) => (
-              <NavLink
-                key={i}
-                className="hidden lg:block text-blue-100 hover:bg-blue-400 px-4 py-2 rounded-md transition duration-500 ease-in-out "
-                href={d.link}
-                onClick={() => {
-                  if (d.label === "Your Participation") {
-                    handleParticipationModal();
-                  } else if (d.label === "Tournament") {
-                    handleTournamentModal();
-                  }
-                }}
-              >
-                {d.label}
-              </NavLink>
+             <NavLink
+             key={i}
+             className=" hidden lg:flex flex items-center text-blue-100 hover:bg-blue-400 px-4 py-2 rounded-md transition duration-500 ease-in-out"
+             to={d.link}
+             onClick={() => {
+               if (d.label === "Your Participation") {
+                 handleParticipationModal();
+               } else if (d.label === "Tournament") {
+                 handleTournamentModal();
+               }
+             }}
+           >
+             {d.label}
+             {d.label === "Your Participation" || d.label === "Tournament" ? (
+               <RiArrowDropDownLine className='ml-2 text-4xl' />
+             ) : null}
+           </NavLink>
             ))}
 
           </div>
@@ -103,7 +107,7 @@ const Navigation = () => {
 
           {/* sidebar mobile menu */}
           <div className={clsx(
-            'fixed h-full w-screen lg:hidden  top-0 right-0 -translate-x-full transition-all', sideMenuOpen && 'translate-x-0'
+            'fixed  h-full w-screen lg:hidden  top-0 right-0 -translate-x-full transition-all', sideMenuOpen && 'translate-x-0'
           )}
           >
 
@@ -135,7 +139,7 @@ const Navigation = () => {
         )}
         {
           modalActive && (
-            <button onClick={closeModal} className="fixed w-screen h-screen top-0 bottom-0 left-0 closeModal_button">&apos;</button>
+            <button onClick={closeModal} className=" w-screen h-screen top-0 bottom-0 left-0 closeModal_button">&apos;</button>
           )
         }
         <hr />
