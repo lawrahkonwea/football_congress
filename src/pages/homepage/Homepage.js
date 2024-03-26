@@ -206,7 +206,7 @@ const Homepage = () => {
             <div className="flex items-center justify-center gap-4 mt-4">
               <p><FaFacebook className='w-9 h-9 text-slate-400' /></p>
               <p><FaInstagram className='w-9 h-9 text-slate-400' /></p>
-              <p><AiOutlineYoutube className='w-9 h-9 text-slate-400'/></p>
+              <p><AiOutlineYoutube className='w-9 h-9 text-slate-400' /></p>
               <p><FaWhatsapp className='w-9 h-9 text-slate-400' /></p>
             </div>
           </div>
@@ -223,7 +223,7 @@ const Homepage = () => {
           </div>
         </div>
       </section>
-      <div className="px-4">
+      <div className="px-4 mb-6">
         <div className="flex mr-8 flex-col w-full justify-center mt-[40%] md:mt-[13%] ">
           <div>
             <h1 className='font-extrabold text-4xl items-start mx-8 mt-3'>Latest News</h1>
@@ -252,7 +252,7 @@ const Homepage = () => {
               onClick={handleNext}
               disabled={isNextDisabled}
             >
-             <MdOutlineArrowForwardIos className='md:hidden lg:block text-4xl text-blue-400 ' />
+              <MdOutlineArrowForwardIos className='md:hidden lg:block text-4xl text-blue-400 ' />
             </button>
           </div>
         </div>
@@ -260,31 +260,31 @@ const Homepage = () => {
           <div className="my-2 md:my-4">
             <p className="font-extrabold text-lg md:text-2xl lg:text-3xl xl:text-4xl text-center text-white">Our Vision</p>
           </div>
-          <div className='text-blue-200 text-sm md:text-base lg:text-base xl:text-base text-center'>
-          <div className="px-16 flex gap-[3px]">
-                  <div className=''>
-                    <List />
-                  </div>
-                  <p className=" "> Our Vision is to empower individuals and team football players in Nigeria and beyond for a common goal regards to talent/skills and dreams on football to come true.</p>
-          </div>
-          <div className="px-16 flex gap-[3px] mt-5">
-                  <div className=''>
-                    <List />
-                  </div>
-                  <p className=" "> We want to advance grassroots football players through founder metal legal perspective and legitimate means by removing them from behind the camera to playing front of the camera.</p>
-          </div>
-          <div className="px-16 flex gap-[3px] mt-5">
-                  <div className=''>
-                    <List />
-                  </div>
-                  <p className=" "> We have alliances with coaches and big football team players in Africa and beyond on special offers for the great academy, tournament, and scouting programs.</p>
-          </div>
-          <div className="px-16 flex gap-[3px] mt-5">
-                  <div className=''>
-                    <List />
-                  </div>
-                  <p className=" "> We have teams on call around the clock that can take care and test the agility of a single player response to training guard. During our field training program, we can accommodate teams techniques that lead to external league standard.</p>
-          </div>
+          <div className='text-blue-200 text-sm md:text-base lg:text-base xl:text-base'>
+            <div className="px-16 flex items-center gap-2">
+              <div className=''>
+                <List />
+              </div>
+              <p className=" "> Our Vision is to empower individuals and team football players in Nigeria and beyond for a common goal regards to talent/skills and dreams on football to come true.</p>
+            </div>
+            <div className="px-16 flex items-center gap-2 mt-5">
+              <div className=''>
+                <List />
+              </div>
+              <p className=" "> We want to advance grassroots football players through founder metal legal perspective and legitimate means by removing them from behind the camera to playing front of the camera.</p>
+            </div>
+            <div className="px-16 flex items-center gap-2 mt-5">
+              <div className=''>
+                <List />
+              </div>
+              <p className=" "> We have alliances with coaches and big football team players in Africa and beyond on special offers for the great academy, tournament, and scouting programs.</p>
+            </div>
+            <div className="px-16 flex items-center gap-2 mt-5">
+              <div className=''>
+                <List />
+              </div>
+              <p className=" "> We have teams on call around the clock that can take care and test the agility of a single player response to training guard. During our field training program, we can accommodate teams techniques that lead to external league standard.</p>
+            </div>
           </div>
         </section>
         <section>
@@ -301,9 +301,11 @@ const Homepage = () => {
                 <img src={evnt.img} alt="action" className="rounded-2xl w-full h-auto max-h-60" />
                 <div className="flex items-center mt-2">
                   <>{evnt.icon}</>
-                  <p className="text-sm font-semibold">{evnt.title}</p>
+                  <div>
+                    <p className="text-sm font-semibold">{evnt.title}</p>
+                    <p className="text-sm">{evnt.text}</p>
+                  </div>
                 </div>
-                <p className="text-sm px-10 ">{evnt.text}</p>
               </div>
             ))}
           </div>
@@ -316,12 +318,12 @@ const Homepage = () => {
           <div className='testimonials mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 h-full w-full px-6 md:px-16'>
             {testimonyEvent.map((testimony, index) => (
               <div className='custom-shadow bg-white rounded-lg px-8 py-8' key={index}>
-                <h3 className='px-8'>{testimony.text}</h3>
-                <div className='flex items-center gap-4'>
+                <div className='flex items-start gap-4'>
                   <img className='rounded-full w-10 h-10 md:w-12 md:h-12' src={testimony.img} alt="test-img" />
                   <div>
-                    <p>{testimony.title}</p>
-                    <p className='text-sm'>{testimony.country}</p>
+                    <h3>{testimony.text}</h3>
+                    <p className="font-[600]">{testimony.title}</p>
+                    <p className='text-[13px]'>{testimony.country}</p>
                   </div>
                 </div>
               </div>
