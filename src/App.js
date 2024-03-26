@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import './App.css';
 import Homepage from './pages/homepage/Homepage';
 import Navigation from './components/navigation';
+import ParticipantsDetail from './components/navComponents/participantsDetail/ParticipantsDetail';
 
 export default function App() {
   const location = useLocation();
@@ -14,12 +15,13 @@ export default function App() {
 
   return (
     <div className="app">
-      <div className="fixed w-full z-50 navbar">
+      <div className="nav">
         <Navigation />
       </div>
       <AnimatePresence>
         <Routes>
           <Route exact path="/" element={<Homepage />} />
+          <Route path="/tournament_details/:participantId" element={<ParticipantsDetail />} />
         </Routes>
       </AnimatePresence>
     </div>

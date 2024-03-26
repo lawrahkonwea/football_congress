@@ -1,32 +1,30 @@
 import React from 'react';
+import { participantsData } from './data/participantsData';
 import { FaExclamationCircle } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
-const Participant = () => {
+const Participant = ({ closeModal }) => {
+  const tournamentDetails = participantsData;
+  const navigate = useNavigate();
+
   return (
-
     <div className='nav-participant hidden lg:block bg-white h-full pb-10 pt-5'>
       <ul className='flex'>
-        <li className='ml-16 flex items-start'>
-          <FaExclamationCircle className='text-4xl mt-1 mr-4' />
-          <div>
-            <p className='font-bold'>Tournament Information</p>
-            <p className=''>The most important information about the tournament</p>
-          </div>
-        </li>
-        <li className='ml-16 flex items-start'>
-          <FaExclamationCircle className='text-4xl mt-1 mr-4' />
-          <div>
-            <p className='font-bold'>Tournament regulations</p>
-            <p>Rules of the match</p>
-          </div>
-        </li>
-        <li className='ml-16 flex items-start'>
-          <FaExclamationCircle className='text-4xl mt-1 mr-4' />
-          <div>
-            <p className='font-bold'>Cost/fee</p>
-            <p>What does it cost</p>
-          </div>
-        </li>
+        {tournamentDetails.map((tournamentDetail, index) => (
+          <li
+            className='ml-16 flex items-start cursor-pointer'
+            key={index}
+            onClick={() => {
+              navigate(`/tournament_details/${tournamentDetail.id}`);
+              closeModal();
+            }}>
+            <FaExclamationCircle className='text-4xl mt-1 mr-4' />
+            <div>
+              <p className='font-bold'>{tournamentDetail.title}</p>
+              <p>{tournamentDetail.desc}</p>
+            </div>
+          </li>
+        ))}
       </ul>
     </div>
   );
