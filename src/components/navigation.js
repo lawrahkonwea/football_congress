@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Participant from './navComponents/Participant';
 import Tournament from './navComponents/Tournament';
+// import About from './navComponents/About'
 import { FiMenu } from 'react-icons/fi';
 import { BiLogoDribbble } from 'react-icons/bi';
 import { RiCloseLine } from 'react-icons/ri';
@@ -30,7 +31,7 @@ const Navigation = () => {
     },
     {
       label: "About us",
-      link: "#"
+      link: "/aboutus"
     },
     {
       label: "Donate",
@@ -93,6 +94,7 @@ const Navigation = () => {
                     }
                   }}
                 >
+                  
                   {d.label}
                   {d.label === "Your Participation" || d.label === "Tournament" ? (
                     <RiArrowDropDownLine className='ml-2 text-4xl' />
@@ -111,7 +113,7 @@ const Navigation = () => {
                   <RiCloseLine onClick={() => setMenu(false)} className='mt-0 mb-8 text-3xl cursor-pointer' />
                   <img className='w-20' src={logo} alt='ball' /></div>
                 {navlinks.map((d, i) => (
-                  <NavLink key={i} className='font-bold' href={d.link}>
+                  <NavLink key={i} className='font-bold' to={d.link}>
                     {d.label}
                   </NavLink>
                 ))}
