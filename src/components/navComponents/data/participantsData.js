@@ -64,7 +64,7 @@ export const participantsData = [
       {
         ruleTitle: "13. Walk over, abandoned match",
         subRule1: <p><b className={style.num}>13.1</b> Any team not appearing at the appointed time and place for a match can be declared loser by 0-3, after a decision by the jury. If a team repeatedly fails to appear at the matches, the team may be excluded from the tournament or Fine of Ten Thousand Naira (N10,000)In special cases, the tournament jury may decide to exclude a team at the first offence i.e. if a deliberate walk over favors the own team or is unfair to another team in the group.</p>,
-        subRule2: <p><b className={style.num}>13.1</b> If a match Is interrupted for some reason and can't be played to the end, the jury will decide if the match has to be replayed and the organizers have the right to change the time, date and venue of any match if the need arise decided by penalty shoot-out or restarted from the minute when it was interrupted, or if the result will be fixed or if one of the teams or both teams lose 0-3.</p>,
+        subRule2: <p><b className={style.num}>13.2</b> If a match Is interrupted for some reason and can't be played to the end, the jury will decide if the match has to be replayed and the organizers have the right to change the time, date and venue of any match if the need arise decided by penalty shoot-out or restarted from the minute when it was interrupted, or if the result will be fixed or if one of the teams or both teams lose 0-3.</p>,
       },
       {
         ruleTitle: "14. Insurance and responsibility",
