@@ -1,5 +1,7 @@
 import React from 'react'
-import Manual from '../../assets/question.png'
+// import Manual from '../../assets/question.png'
+import Light from '../../assets/vector.png';
+import HackathonGuy from '../../assets/man-wearing-smart-glasses-touching-virtual-screen 1.png';
 import { FaExclamationCircle } from "react-icons/fa";
 
 
@@ -30,37 +32,50 @@ const About = () => {
 
   return (
     <>
-    <div className='flex flex-col md:flex-row justify-between px-8'>
-    <div className='pt-[200px] font-mono animate__fadeInDown'>
-     <h1 className='text-sky-950 text-5xl font-bold'>AFEC Football</h1> 
-     <h2 className='text-sky-600 text-4xl mt-2 font-bold'>Empowerment Congress</h2> 
-     <p className='mt-5'>AFEC is the world’s largest and most international youth football tournament. Each year, around 1700 teams from 80 nations take part and they play 4500 games on 110 pitches.</p>
-    </div>
-
-    <div>
-    <img src={Manual} alt="manual" className="w-full h-full animate-pulse pt-3 md:pt-20"/>
-    </div>
-    </div>
-
-    <div className='items-center text-center'>
-      <p className='font-mono'>SINCE 2001</p>
-      <h1 className='text-4xl font-bold text-sky-950'>AFEC Cup</h1>
-      <p className='px-40'>It’s the teams, and participants from around the world that make the tournament unique. A meeting place for the world’s youth, irrespective of religion, skin color or nationality, with football as the common denominator. </p>
-    </div>
-
-      <div>
-        {aboutData.map((data, index) => (
-          <div key={index}>
-            <div>
-              <>{data.icon}</>
+      <div className='px-4 pt-[150px]'>
+        <div className='px-4'>
+          <div className='h-[100%] bg-red-200 md:ml-[5%] flex flex-col md:flex-row justify-between gap-4'>
+            <div className='animate__fadeInDown w-[100%] '>
+              <h1 className='text-sky-950 text-5xl font-bold'>AFEC Football</h1>
+              <h2 className='text-sky-600 text-4xl mt-2 font-bold'>Empowerment Congress</h2>
+              <p className='mt-5'>AFEC is the world’s largest and most international youth football tournament. Each year, around 1700 teams from 80 nations take part and they play 4500 games on 110 pitches.</p>
             </div>
-            <div>
-              <h2>{data.title}</h2>
-              <h2>{data.text}</h2>
+
+            <div className="w-[100%]  md:ml-[10%]  ">
+              <img
+                src={HackathonGuy}
+                alt="hackathon guy"
+                className=" w-[50%] md:w-[70%] mix-blend-luminosity"
+              />
+              <img
+                src={Light}
+                alt="light"
+                className="App-logo w-[50%] md:w-[70%] mt-[-350px] md:ml-[-10px] mix-blend-hard-light "
+              />
             </div>
           </div>
-        ))}
-    </div>
+        </div>
+
+        <div className='text-center'>
+          <p className=''>SINCE 2001</p>
+          <h1 className='text-4xl font-bold text-sky-950'>AFEC Cup</h1>
+          <p className='px-4 md:w-[60%] m-auto'>It’s the teams, and participants from around the world that make the tournament unique. A meeting place for the world’s youth, irrespective of religion, skin color or nationality, with football as the common denominator. </p>
+        </div>
+
+        <div className='flex justify-center flex-wrap'>
+          {aboutData.map((data, index) => (
+            <div className='md:w-[40%]' key={index}>
+              <div className='flex items-start gap-2'>
+                <p>{data.icon}</p>
+                <div>
+                  <h2 className='font-[600]'>{data.title}</h2>
+                  <h2 className='text-[13px]'>{data.text}</h2>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   )
 }

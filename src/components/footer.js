@@ -1,10 +1,12 @@
 import React from 'react'
 import { useForm, ValidationError } from '@formspree/react';
-// import { participantsData } from './navComponents/data/participantsData';
-// import { useNavigate } from 'react-router-dom';
+import { participantsData } from './navComponents/data/participantsData';
+import { Link } from 'react-router-dom';
 
 
 const Footer = () => {
+  // const navigate = useNavigate();
+  const data = participantsData;
   const [state, handleSubmit] = useForm("xkndqnvl");
 
   if (state.succeeded) {
@@ -15,10 +17,10 @@ const Footer = () => {
     return <p>Message received successfully. Redirecting...</p>;
   }
 
-
+  
   return (
     <>
-      <div className='bg-sky-950 text-white'>
+      <div className='bg-sky-950 text-white '>
         <div className='lg:flex flex-col md:flex-row justify-between py-8 px-20 '>
           <form onSubmit={handleSubmit} className='flex flex-col'>
           <p className='mb-6'>SEND US AN EMAIL</p>
@@ -61,10 +63,10 @@ const Footer = () => {
             </div>
 
           <div className='pr-32 mt-8 md:mt-0'>
-            <p className='mb-6'>YOUR PARTICIPATION</p>
-            <p>Tournament Information</p>
-            <p>Tornament Regulations</p>
-            <p>Cost/Fee</p>
+          <p className='mb-6'>YOUR PARTICIPATION</p>
+            {data.map((evnt, index ) => (
+            <Link to={`/tournament_details/${evnt.id}`} className='block' key={index}>{evnt.title}</Link>
+            ))}
             <p>AFEC Account</p>
           </div>
           

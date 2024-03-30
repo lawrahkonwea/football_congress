@@ -196,10 +196,7 @@ const Homepage = () => {
         <div className="w-full video">
           <div className='overlay'></div>
           <video className='' src={VideoBg} autoPlay loop muted />
-          <div className="font-sans content absolute w-full h-full flex top-0 items-center flex-col justify-center">
-            {/* <h2 className=' text-4xl text-white text-center pb-12'>African Fooball</h2>
-            <h1 className=' text-6xl text-center text-yellow-400'>Empowerment Congress</h1> */}
-
+          <div className="content absolute w-full h-full flex top-0 items-center flex-col justify-center">
             <span className="text-white text-4xl text-left desktop:text-[36px] font-bold"></span>
             <span className=" text-yellow-400 text-6xl text-right desktop:text-[36px] font-bold"></span>
 
@@ -224,7 +221,7 @@ const Homepage = () => {
         </div>
       </section>
       <div className="px-4 mb-6">
-        <div className="flex mr-8 flex-col w-full justify-center mt-[40%] md:mt-[13%] ">
+        <div className="bg-gradient-to-r from-blue-50 to-blue-sky-400 flex mr-8 flex-col w-full justify-center mt-[40%] md:mt-[13%] ">
           <div>
             <h1 className='font-extrabold text-4xl items-start mx-8 mt-3'>Latest News</h1>
           </div>
