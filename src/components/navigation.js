@@ -34,7 +34,7 @@ const Navigation = () => {
     },
     {
       label: "Donate",
-      link: "#"
+      link: "/donate"
     }
   ];
 
