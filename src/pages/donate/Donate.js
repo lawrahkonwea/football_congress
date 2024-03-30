@@ -29,7 +29,7 @@ const Donate = () => {
 
   return (
     <div className="pt-[140px] px-8">
-      <div className="max-w-md mx-auto">
+      <div className="max-w-md mx-auto my-4">
         <input type="email" placeholder="Email" className={style.input} value={email} onChange={(e) => setEmail(e.target.value)} />
         <input type="number" placeholder="Amount" className={style.input} value={amount} onChange={(e) => setAmount(e.target.value)} />
         <input type="text" placeholder="Name" className={style.input} value={name} onChange={(e) => setName(e.target.value)} />
