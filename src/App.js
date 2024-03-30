@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import './App.css';
 import Homepage from './pages/homepage/Homepage';
 import Navigation from './components/navigation';
+import Donate from './pages/donate/Donate';
 import ParticipantsDetail from './components/navComponents/participantsDetail/ParticipantsDetail';
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
         <Routes>
           <Route exact path="/" element={<Homepage />} />
           <Route path="/tournament_details/:participantId" element={<ParticipantsDetail />} />
+          <Route path="/donate" element={<Donate /> } />
         </Routes>
       </AnimatePresence>
     </div>
