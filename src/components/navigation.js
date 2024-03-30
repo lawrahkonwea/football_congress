@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Participant from './navComponents/Participant';
 import Tournament from './navComponents/Tournament';
+// import About from './navComponents/About'
 import { FiMenu } from 'react-icons/fi';
 import { BiLogoDribbble } from 'react-icons/bi';
 import { RiCloseLine } from 'react-icons/ri';
 import { FcGlobe } from "react-icons/fc";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate} from 'react-router-dom';
 import logo from '../assets/caf-logo.png';
 import clsx from 'clsx';
 import SearchBar from './searchbar';
@@ -14,6 +15,8 @@ import SearchBar from './searchbar';
 
 
 const Navigation = () => {
+  const navigate = useNavigate();
+  
   const [sideMenuOpen, setMenu] = useState(false);
   const [showParticipation, setShowParticipation] = useState(false);
   const [showTournament, setShowTournament] = useState(false);
@@ -30,7 +33,7 @@ const Navigation = () => {
     },
     {
       label: "About us",
-      link: "#"
+      link: "/aboutus"
     },
     {
       label: "Donate",
@@ -81,23 +84,25 @@ const Navigation = () => {
                 </NavLink>
               </section>
               {navlinks.map((d, i) => (
-                <NavLink
+                <button
                   key={i}
                   className=" hidden lg:flex flex items-center text-blue-100 hover:bg-blue-400 px-4 py-2 rounded-md transition duration-500 ease-in-out"
-                  to={d.link}
+                  
                   onClick={() => {
                     if (d.label === "Your Participation") {
                       handleParticipationModal();
                     } else if (d.label === "Tournament") {
                       handleTournamentModal();
                     }
+                    navigate(`${d.link}`)
                   }}
                 >
+                  
                   {d.label}
                   {d.label === "Your Participation" || d.label === "Tournament" ? (
                     <RiArrowDropDownLine className='ml-2 text-4xl' />
                   ) : null}
-                </NavLink>
+                </button>
               ))}
             </div>
             <SearchBar />
@@ -111,7 +116,7 @@ const Navigation = () => {
                   <RiCloseLine onClick={() => setMenu(false)} className='mt-0 mb-8 text-3xl cursor-pointer' />
                   <img className='w-20' src={logo} alt='ball' /></div>
                 {navlinks.map((d, i) => (
-                  <NavLink key={i} className='font-bold' href={d.link}>
+                  <NavLink key={i} className='font-bold' to={d.link}>
                     {d.label}
                   </NavLink>
                 ))}

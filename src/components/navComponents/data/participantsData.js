@@ -55,7 +55,7 @@ export const participantsData = [
       },
       {
         ruleTitle: "11. Protests and Sanctions",
-        ruleDesc: "Any protests musr be madw in writing and delivered by a responsible to tournament, no later than 48 hours after the match is finished.A protest fee of 5,000 naira only will be paid at the same time. This fee will be returned if the protest is approved.The decisions of the referee regarding facts connected with the match are final (FIFA rule No. 5). No measures will be taken on protests on decisions made by the referee.",
+        ruleDesc: "Any protests must be made in writing and delivered by a responsible to tournament, no later than 48 hours after the match is finished.A protest fee of 5,000 naira only will be paid at the same time. This fee will be returned if the protest is approved.The decisions of the referee regarding facts connected with the match are final (FIFA rule No. 5). No measures will be taken on protests on decisions made by the referee.",
       },
       {
         ruleTitle: "12. Cautions and sending-off offences",
