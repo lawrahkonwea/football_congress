@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const Donate = () => {
+  const [email, setEmail] = useState("")
   const style = {
     input: "block w-full px-4 py-2 mb-4 rounded-md border border-gray-300 focus:outline-none focus:border-primary-500"
   }
