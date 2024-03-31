@@ -38,6 +38,10 @@ const Navigation = () => {
     {
       label: "Donate",
       link: "/donate"
+    },
+    {
+      label: "Register",
+      link: "/register"
     }
   ];
 

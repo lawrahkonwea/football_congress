@@ -67,7 +67,7 @@ const Footer = () => {
             {data.map((evnt, index ) => (
             <Link to={`/tournament_details/${evnt.id}`} className='block' key={index}>{evnt.title}</Link>
             ))}
-            <p>AFEC Account</p>
+            <Link to="/donate">AFEC Account</Link>
           </div>
           
         </div>

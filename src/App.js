@@ -8,6 +8,7 @@ import Donate from './pages/donate/Donate';
 import ParticipantsDetail from './components/navComponents/participantsDetail/ParticipantsDetail';
 import Footer from './components/footer';
 import About from './components/navComponents/About';
+import Registration from './pages/registration/Registration';
 
 export default function App() {
   const location = useLocation();
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="/tournament_details/:participantId" element={<ParticipantsDetail />} />
           <Route path="/aboutus" element={<About />} />
           <Route path="/donate" element={<Donate /> } />
+          <Route path="/register" element={<Registration />} />
         </Routes>
       </AnimatePresence>
       <div>
