@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Participant from './navComponents/Participant';
+import { tournamentData } from './navComponents/data/tournamentData';
+import { participantsData } from './navComponents/data/participantsData';
 import Tournament from './navComponents/Tournament';
 // import About from './navComponents/About'
 import { FiMenu } from 'react-icons/fi';
@@ -7,7 +9,7 @@ import { BiLogoDribbble } from 'react-icons/bi';
 import { RiCloseLine } from 'react-icons/ri';
 import { FcGlobe } from "react-icons/fc";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { NavLink, useNavigate} from 'react-router-dom';
+import { NavLink, useNavigate, Link } from 'react-router-dom';
 import logo from '../assets/caf-logo.png';
 import clsx from 'clsx';
 import SearchBar from './searchbar';
@@ -15,12 +17,18 @@ import SearchBar from './searchbar';
 
 
 const Navigation = () => {
+
+  const sideMenu = participantsData;
+  const sideTournament = tournamentData;
   const navigate = useNavigate();
-  
+
   const [sideMenuOpen, setMenu] = useState(false);
   const [showParticipation, setShowParticipation] = useState(false);
   const [showTournament, setShowTournament] = useState(false);
   const [modalActive, setModalActive] = useState(false);
+  const [showParticipationSide, setShowParticipationSide] = useState(false);
+  const [showTournamentSide, setShowTournamentSide] = useState(false);
+
 
   const navlinks = [
     {
@@ -45,6 +53,8 @@ const Navigation = () => {
     }
   ];
 
+
+
   const handleParticipationModal = () => {
     setShowParticipation(!showParticipation);
     setShowTournament(false);
@@ -62,6 +72,17 @@ const Navigation = () => {
     setShowParticipation(false);
     setModalActive(false);
   }
+
+  const handleParticipationSideModal = () => {
+    setShowParticipationSide(!showParticipationSide);
+    setShowTournamentSide(false);
+  }
+
+  const handleTournamentSideModal = () => {
+    setShowTournamentSide(!showTournamentSide)
+    setShowParticipationSide(false)
+  }
+
 
   return (
     <>
@@ -91,7 +112,7 @@ const Navigation = () => {
                 <button
                   key={i}
                   className=" hidden lg:flex flex items-center text-blue-100 hover:bg-blue-400 px-4 py-2 rounded-md transition duration-500 ease-in-out"
-                  
+
                   onClick={() => {
                     if (d.label === "Your Participation") {
                       handleParticipationModal();
@@ -101,7 +122,7 @@ const Navigation = () => {
                     navigate(`${d.link}`)
                   }}
                 >
-                  
+
                   {d.label}
                   {d.label === "Your Participation" || d.label === "Tournament" ? (
                     <RiArrowDropDownLine className='ml-2 text-4xl' />
@@ -112,18 +133,65 @@ const Navigation = () => {
             <SearchBar />
             {/* sidebar mobile menu */}
             <div className={clsx(
-              'fixed  h-full w-screen lg:hidden  top-0 right-0 -translate-x-full transition-all', sideMenuOpen && 'translate-x-0'
+              'fixed h-screen w-screen md:hidden top-0 right-0 -translate-x-full transition-all', sideMenuOpen && 'translate-x-0'
             )}
             >
               <section className='text-blue-400 bg-white rounded-lg flex-col absolute left-4 top-4 h-5/6 w-11/12 p-8 gap-8 z-50 flex '>
                 <div className='flex justify-between'>
                   <RiCloseLine onClick={() => setMenu(false)} className='mt-0 mb-8 text-3xl cursor-pointer' />
                   <img className='w-20' src={logo} alt='ball' /></div>
-                {navlinks.map((d, i) => (
-                  <NavLink key={i} className='font-bold' to={d.link}>
-                    {d.label}
-                  </NavLink>
+
+                <div>
+                  <button >Your Participation</button>
+                  <RiArrowDropDownLine onClick={() => handleParticipationSideModal()} className='cursor pointer ml-2 text-4xl' />
+                </div>
+
+                {sideMenu.map((evnt, index) => (
+                  <Link to={`/tournament_details/${evnt.id}`} onClick={() => setMenu(false)} className='' key={index}>
+                    {showParticipationSide ? ( 
+                      <p>{evnt.title}</p>
+                    ) : '' } 
+                  </Link>
                 ))}
+
+
+                <div>
+                  <button >Tournament</button>
+                  <RiArrowDropDownLine onClick={() => handleTournamentSideModal()} className='cursor pointer ml-2 text-4xl' />
+                </div>
+
+                
+                {sideTournament.map((evnt, index) => (
+                  <Link to={`/tournament_details/${evnt.id}`} onClick={() => setMenu(false)} className='' key={index}>
+                    {showTournamentSide ? (
+                      <p>{evnt.title}</p>
+                    ) : '' }
+                  </Link>
+                ))}
+                <NavLink onClick={() => setMenu(false)} to="/aboutus">About</NavLink>
+                <NavLink onClick={() => setMenu(false)} to="/donate">Donate</NavLink>
+
+                {/* <NavLink className='font-bold'
+                  onClick={() => {
+                    if (d.label === "Your Participation") {
+                      handleParticipationSideModal();
+                    } else if (d.label === "Tournament") {
+                      handleTournamentSideModal();
+                    }
+                    navigate(`${d.link}`)
+                  }}
+                  >
+                    {d.label}
+                    {d.label}
+                  {d.label === "Your Participation" || d.label === "Tournament" ? (
+                    <RiArrowDropDownLine className='ml-2 text-4xl' />
+                  ) : null}
+                 
+                    
+                  </NavLink> */}
+
+
+
               </section>
             </div>
             <section className='flex items-center gap-4 text-3xl'>
@@ -134,7 +202,7 @@ const Navigation = () => {
             <Participant closeModal={closeModal} />
           )}
           {showTournament && (
-            <Tournament />
+            <Tournament closeModal={closeModal} />
           )}
           {
             modalActive && (

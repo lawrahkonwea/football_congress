@@ -32,27 +32,35 @@ const About = () => {
 
   return (
     <>
-      <div className='px-4 pt-[150px]'>
+      <div className='px-4 pt-[150px] overflow-hidden'>
         <div className='px-4'>
-          <div className='h-[100%] bg-red-200 md:ml-[5%] flex flex-col md:flex-row justify-between gap-4'>
+          <div className='flex lg:flex-row flex-col w-full items-center'>
             <div className='animate__fadeInDown w-[100%] '>
               <h1 className='text-sky-950 text-5xl font-bold'>AFEC Football</h1>
               <h2 className='text-sky-600 text-4xl mt-2 font-bold'>Empowerment Congress</h2>
               <p className='mt-5'>AFEC is the world’s largest and most international youth football tournament. Each year, around 1700 teams from 80 nations take part and they play 4500 games on 110 pitches.</p>
             </div>
 
-            <div className="w-[100%]  md:ml-[10%]  ">
-              <img
-                src={HackathonGuy}
-                alt="hackathon guy"
-                className=" w-[50%] md:w-[70%] mix-blend-luminosity"
-              />
+            <div className="w-[100%]">
               <img
                 src={Light}
                 alt="light"
-                className="App-logo w-[50%] md:w-[70%] mt-[-350px] md:ml-[-10px] mix-blend-hard-light "
+                // className="App-logo w-[50%] md:w-[70%] mt-[-350px] md:ml-[-10px] mix-blend-hard-light "
+                className="App-logo  w-[50%] md:w-[70%] w-full"
               />
             </div>
+             {/* <div className="w-[100%]  md:ml-[10%]">
+          <img
+            src={HackathonGuy}
+            alt="hackathon guy"
+            className="relative w-[55%] md:w-[40%] w-full h-full object-cover mix-blend-luminosity"
+          />
+          <img
+            src={Light}
+            alt="light"
+            className="App-logo absolute lg:right-0 lg:w-[50%] w-full lg:h-[641px] h-full mix-blend-hard-light object-contain -mt-[3%]"
+          />
+        </div> */}
           </div>
         </div>
 

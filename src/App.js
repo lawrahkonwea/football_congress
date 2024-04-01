@@ -6,6 +6,7 @@ import Homepage from './pages/homepage/Homepage';
 import Navigation from './components/navigation';
 import Donate from './pages/donate/Donate';
 import ParticipantsDetail from './components/navComponents/participantsDetail/ParticipantsDetail';
+import TournamentDetail from './components/navComponents/tournamentDetail/TournamentDetail';
 import Footer from './components/footer';
 import About from './components/navComponents/About';
 import Registration from './pages/registration/Registration';
@@ -26,6 +27,7 @@ export default function App() {
         <Routes>
           <Route exact path="/" element={<Homepage />} />
           <Route path="/tournament_details/:participantId" element={<ParticipantsDetail />} />
+          <Route path="/centers_details/:centersId" element={<TournamentDetail />} />
           <Route path="/aboutus" element={<About />} />
           <Route path="/donate" element={<Donate /> } />
           <Route path="/register" element={<Registration />} />
