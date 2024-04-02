@@ -24,7 +24,7 @@ const ParticipantsDetail = () => {
       </nav>
       <hr />
       <section className="px-4 mt-6">
-        <div className="mt-[5%]">
+        <div className="mt-[5%] ">
           {tournamentDetail[0].content.map(detail => (
             <div className="my-4 md:px-[15%]">
               <h1 className="text-[23px] font-extrabold text-[#000]">{detail.ruleTitle}</h1>

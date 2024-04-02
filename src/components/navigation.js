@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Participant from './navComponents/Participant';
+import { FaExclamationCircle } from "react-icons/fa";
 import { tournamentData } from './navComponents/data/tournamentData';
 import { participantsData } from './navComponents/data/participantsData';
 import Tournament from './navComponents/Tournament';
@@ -10,7 +11,7 @@ import { RiCloseLine } from 'react-icons/ri';
 import { FcGlobe } from "react-icons/fc";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { NavLink, useNavigate, Link } from 'react-router-dom';
-import logo from '../assets/caf-logo.png';
+import logo from '../assets/AFEC LOGO 3.png';
 import clsx from 'clsx';
 import SearchBar from './searchbar';
 
@@ -46,11 +47,8 @@ const Navigation = () => {
     {
       label: "Donate",
       link: "/donate"
-    },
-    {
-      label: "Register",
-      link: "/register"
     }
+    
   ];
 
 
@@ -99,13 +97,13 @@ const Navigation = () => {
               <h3>Create Account</h3>
             </div>
           </div>
-          <nav className='flex bg-sky-700 justify-between  px-8 items-center lg:px-10 '>
+          <nav className='flex bg-sky-700 justify-between py-2 px-8 items-center lg:px-10 '>
             <div className="flex items-center gap-8">
               <section className='flex items-center gap-4 '>
                 {/* logo */}
-                <FiMenu onClick={() => setMenu(true)} className='text-3xl cursor-pointer lg:hidden' />
+                <FiMenu onClick={() => setMenu(true)} className='text-white  text-3xl cursor-pointer lg:hidden' />
                 <NavLink to="/" className='text-4xl font-mono '>
-                  <img className='w-20' src={logo} alt='ball' />
+                  <img className='w-10 my-1' src={logo} alt='ball' />
                 </NavLink>
               </section>
               {navlinks.map((d, i) => (
@@ -131,67 +129,53 @@ const Navigation = () => {
               ))}
             </div>
             <SearchBar />
+
+
             {/* sidebar mobile menu */}
             <div className={clsx(
               'fixed h-screen w-screen md:hidden top-0 right-0 -translate-x-full transition-all', sideMenuOpen && 'translate-x-0'
             )}
             >
-              <section className='text-blue-400 bg-white rounded-lg flex-col absolute left-4 top-4 h-5/6 w-11/12 p-8 gap-8 z-50 flex '>
+              <section className='overflow-y-auto text-blue-400 bg-white rounded-lg flex-col absolute left-4 top-4 h-5/6 w-11/12 p-8 gap-8 z-50 flex '>
                 <div className='flex justify-between'>
-                  <RiCloseLine onClick={() => setMenu(false)} className='mt-0 mb-8 text-3xl cursor-pointer' />
-                  <img className='w-20' src={logo} alt='ball' /></div>
+                  <RiCloseLine onClick={() => setMenu(false)} className='mt-2 text-3xl cursor-pointer' />
+                  <img className='w-12' src={logo} alt='ball' /></div>
 
-                <div>
-                  <button >Your Participation</button>
-                  <RiArrowDropDownLine onClick={() => handleParticipationSideModal()} className='cursor pointer ml-2 text-4xl' />
-                </div>
-
+                
+                <div className=''>
+                  <button onClick={() => handleParticipationSideModal()}>
+                  <div  className='flex items-center'>
+                  <span>Your Participation</span>
+                  <RiArrowDropDownLine  className='cursor pointer ml-[16px] text-4xl' />
+                  </div>
                 {sideMenu.map((evnt, index) => (
                   <Link to={`/tournament_details/${evnt.id}`} onClick={() => setMenu(false)} className='' key={index}>
                     {showParticipationSide ? ( 
-                      <p>{evnt.title}</p>
+                      <p className='flex items-center gap-3'><FaExclamationCircle className='text-2xl mt-1 mr-4' />{evnt.title}</p>
                     ) : '' } 
                   </Link>
                 ))}
-
-
-                <div>
-                  <button >Tournament</button>
-                  <RiArrowDropDownLine onClick={() => handleTournamentSideModal()} className='cursor pointer ml-2 text-4xl' />
+                </button>
                 </div>
 
-                
+                <div className=''>
+                  <button onClick={() => handleTournamentSideModal()}>
+                  <div  className='flex items-center'>
+                  <span>Tournament</span>
+                  <RiArrowDropDownLine  className='cursor pointer text-4xl' />
+                  </div>
                 {sideTournament.map((evnt, index) => (
-                  <Link to={`/tournament_details/${evnt.id}`} onClick={() => setMenu(false)} className='' key={index}>
-                    {showTournamentSide ? (
-                      <p>{evnt.title}</p>
-                    ) : '' }
+                  <Link to={`/centers_details/${evnt.id}`} onClick={() => setMenu(false)} className='' key={index}>
+                    {showTournamentSide ? ( 
+                      <p className='flex items-center gap-3'><FaExclamationCircle className='text-2xl mt-1 mr-4' />{evnt.title}</p>
+                    ) : '' } 
                   </Link>
                 ))}
+                </button>
+                </div>
                 <NavLink onClick={() => setMenu(false)} to="/aboutus">About</NavLink>
                 <NavLink onClick={() => setMenu(false)} to="/donate">Donate</NavLink>
-
-                {/* <NavLink className='font-bold'
-                  onClick={() => {
-                    if (d.label === "Your Participation") {
-                      handleParticipationSideModal();
-                    } else if (d.label === "Tournament") {
-                      handleTournamentSideModal();
-                    }
-                    navigate(`${d.link}`)
-                  }}
-                  >
-                    {d.label}
-                    {d.label}
-                  {d.label === "Your Participation" || d.label === "Tournament" ? (
-                    <RiArrowDropDownLine className='ml-2 text-4xl' />
-                  ) : null}
-                 
-                    
-                  </NavLink> */}
-
-
-
+  
               </section>
             </div>
             <section className='flex items-center gap-4 text-3xl'>

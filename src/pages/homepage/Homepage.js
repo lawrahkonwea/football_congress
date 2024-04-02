@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { ReactComponent as List } from '../../assets/svg/list terms.svg';
 import VideoBg from "../../assets/football-video.mp4";
 import Femaleaction from "../../assets/femaleaction.jpg";
 import Streetphoto from "../../assets/streetphoto.jpg";
+import Singleplayer from "../../assets/single player.jpg"
 import Throwplayer from "../../assets/throwplayer.jpg";
 import Femaleplayer from "../../assets/femaleplayer.jpg";
 import { FaExclamationCircle } from "react-icons/fa";
@@ -26,14 +27,14 @@ import "./index.css";
 const Homepage = () => {
 
   const [cards] = useState([
-    { id: 1, title: 'Card 1', image: Throwplayer, text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    { id: 1, title: 'Card 1', image: Singleplayer, text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
     { id: 2, title: 'Card 2', image: Streetphoto, text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.' },
     { id: 3, title: 'Card 3', image: Femaleplayer, text: 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.' },
-    { id: 4, title: 'Card 4', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+    { id: 4, title: 'Card 4', image: Throwplayer, text: 'Etiam porta sem malesuada magna mollis euismod.' },
     { id: 5, title: 'Card 5', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
-    { id: 6, title: 'Card 6', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
-    { id: 7, title: 'Card 7', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
-    { id: 8, title: 'Card 8', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+    // { id: 6, title: 'Card 6', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+    // { id: 7, title: 'Card 7', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+    // { id: 8, title: 'Card 8', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
   ]);
 
   const boxRef = useRef(null);
@@ -120,7 +121,7 @@ const Homepage = () => {
 
   const helpOpt = [
     {
-      title: <>F&amp;Q</>,
+      title: <>Register</>,
       icon: <BiLogoDribbble className='text-white' />,
     },
     {
@@ -132,6 +133,10 @@ const Homepage = () => {
       icon: <BiLogoDribbble className='text-white' />,
     },
   ]
+
+  const registerIndex = 0;
+  const contactIndex = 2;
+
 
   const testimonyEvent = [
     {
@@ -196,25 +201,40 @@ const Homepage = () => {
         <div className="w-full video">
           <div className='overlay'></div>
           <video className='' src={VideoBg} autoPlay loop muted />
-          <div className="content absolute w-full h-full flex top-0 items-center flex-col justify-center">
-            <span className="text-white text-4xl text-left desktop:text-[36px] font-bold"></span>
-            <span className=" text-yellow-400 text-6xl text-right desktop:text-[36px] font-bold"></span>
+          <div className="content absolute w-full h-full flex flex-wrap top-0 items-center flex-col justify-center">
+            <span className="text-white md:text-4xl text-2xl text-left desktop:text-[36px] font-bold"></span>
+            <span className=" text-yellow-400 md:text-6xl text-3xl text-right desktop:text-[36px] font-bold"></span>
 
             <div className="flex items-center justify-center gap-4 mt-4">
-              <p><FaFacebook className='w-9 h-9 text-slate-400' /></p>
-              <p><FaInstagram className='w-9 h-9 text-slate-400' /></p>
-              <p><AiOutlineYoutube className='w-9 h-9 text-slate-400' /></p>
-              <p><FaWhatsapp className='w-9 h-9 text-slate-400' /></p>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <FaFacebook className='w-9 h-9 text-slate-400' />
+              </a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className='w-9 h-9 text-slate-400' />
+              </a>
+              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+                <AiOutlineYoutube className='w-9 h-9 text-slate-400' />
+              </a>
+              <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp className='w-9 h-9 text-slate-400' />
+              </a>
             </div>
           </div>
           <div className="bg-sky-800">
             <p className="text-center px-4 py-[10px] text-[#fff]">JAN-DEC • 2024 • AFEC, AFRICA</p>
           </div>
           <div className="bg-sky-700 flex justify-around items-center gap-4">
-            {helpOpt.map((opt) => (
+            {helpOpt.map((opt, index) => (
               <div className="px-4 py-4 flex justify-center flex-col">
                 <p className="m-auto pb-[2px]">{opt.icon}</p>
-                <p className="text-[#fff]">{opt.title}</p>
+                {index === registerIndex ? (
+                  <Link to='/register' className="text-[#fff]">{opt.title}</Link>
+                ) : index === contactIndex ? (
+                  <Link to='/contacts' className="text-[#fff]">{opt.title}</Link>
+                ) : (
+                  <span className="text-[#fff]">{opt.title}</span>
+                )}
+
               </div>
             ))}
           </div>

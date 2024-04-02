@@ -9,6 +9,7 @@ import ParticipantsDetail from './components/navComponents/participantsDetail/Pa
 import TournamentDetail from './components/navComponents/tournamentDetail/TournamentDetail';
 import Footer from './components/footer';
 import About from './components/navComponents/About';
+import Contactus from './components/navComponents/contactus';
 import Registration from './pages/registration/Registration';
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/aboutus" element={<About />} />
           <Route path="/donate" element={<Donate /> } />
           <Route path="/register" element={<Registration />} />
+          <Route path="/contacts" element={<Contactus />} />
         </Routes>
       </AnimatePresence>
       <div>

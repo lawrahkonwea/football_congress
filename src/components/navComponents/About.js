@@ -1,7 +1,7 @@
 import React from 'react'
 // import Manual from '../../assets/question.png'
 import Light from '../../assets/vector.png';
-import HackathonGuy from '../../assets/man-wearing-smart-glasses-touching-virtual-screen 1.png';
+// import HackathonGuy from '../../assets/man-wearing-smart-glasses-touching-virtual-screen 1.png';
 import { FaExclamationCircle } from "react-icons/fa";
 
 

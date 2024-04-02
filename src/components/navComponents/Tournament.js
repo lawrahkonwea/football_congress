@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import { FaExclamationCircle } from "react-icons/fa";
 import { tournamentData } from './data/tournamentData';
 import { useNavigate } from 'react-router-dom';
