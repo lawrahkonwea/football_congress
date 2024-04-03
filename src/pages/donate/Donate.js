@@ -41,3 +41,38 @@ const Donate = () => {
 };
 
 export default Donate;
+
+// import { useState } from 'react';
+// import { MdContentCopy } from 'react-icons/md';
+
+// const AccountPage = () => {
+//   const [copied, setCopied] = useState(false);
+
+//   const handleCopy = () => {
+//     // Copy the account number to the clipboard
+//     const accountNumber = '1234567890'; // Replace this with your actual account number
+//     navigator.clipboard.writeText(accountNumber);
+
+//     // Set copied to true to show the copied alert
+//     setCopied(true);
+
+//     // Reset copied state after 3 seconds
+//     setTimeout(() => {
+//       setCopied(false);
+//     }, 3000);
+//   };
+
+//   return (
+//     <div>
+//       <div>
+//         <p>Account Number: 1234567890</p>
+//         <button onClick={handleCopy}>
+//           Copy <MdContentCopy />
+//         </button>
+//       </div>
+//       {copied && <div>Copied!</div>}
+//     </div>
+//   );
+// };
+
+// export default AccountPage;

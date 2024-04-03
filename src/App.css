@@ -74,3 +74,8 @@ video {
     transform: rotate(360deg);
   }
 } 
+
+
+.bg-custom-bg img {
+  background-color: transparent;
+}

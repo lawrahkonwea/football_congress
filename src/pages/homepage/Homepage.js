@@ -14,13 +14,16 @@ import Tournament from '../../assets/tornament.jpg';
 import Screening from '../../assets/screening-football.jpg'
 import Femaletournament from "../../assets/female-tornament.jpg";
 import Disabled from "../../assets/disabled.jpg";
+import Fifa from "../../assets/Fifa President.jpg"
+import President from "../../assets/Afec-president.jpg"
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { AiOutlineYoutube } from "react-icons/ai";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
-import { Typed } from 'react-typed';
+import { Typed } from 'react-typed'
+import { FaRegCommentDots } from "react-icons/fa6";
 
 import "./index.css";
 
@@ -32,9 +35,6 @@ const Homepage = () => {
     { id: 3, title: 'Card 3', image: Femaleplayer, text: 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.' },
     { id: 4, title: 'Card 4', image: Throwplayer, text: 'Etiam porta sem malesuada magna mollis euismod.' },
     { id: 5, title: 'Card 5', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
-    // { id: 6, title: 'Card 6', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
-    // { id: 7, title: 'Card 7', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
-    // { id: 8, title: 'Card 8', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
   ]);
 
   const boxRef = useRef(null);
@@ -91,7 +91,7 @@ const Homepage = () => {
       img: Tournament,
       icon: <FaExclamationCircle className="w-8 h-8 mr-2" />,
       title: "Tournament Hosting",
-      text: "lorem Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      text: "Hosting tournaments is more than just organizing matches; it's about fostering a sense of community, promoting sportsmanship, and nurturing talent. At Afec Football Congress, we take pride in providing top-notch facilities, fair play, and memorable experiences for both players and fans. From grassroots tournaments to prestigious championships, we strive to create an atmosphere where passion for the game thrives and dreams take flight.",
       id: 1,
     },
     {
@@ -140,15 +140,15 @@ const Homepage = () => {
 
   const testimonyEvent = [
     {
-      text: "lorem Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-      img: Tournament,
+      text: "This is the kind of inter-schools tournament that will enable African Countries to develop grassroot football and detect the future class football players",
+      img: Fifa,
       title: "Gerald Osifo",
-      country: "Nigeria",
+      country: "Italy",
     },
     {
-      text: "lorem Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-      img: Tournament,
-      title: "Gerald Osifo",
+      text: "When I was growing up, I realised that not everyone has the same opportunities. It makes me so happy to have been able to help create opportunities for young people through the Afec Football – young people who may not always have the best conditions. And of course, Afec, which has done an amazing job.",
+      img: President ,
+      title: "Samuel V.O Johnson",
       country: "Nigeria",
     },
     {
@@ -206,10 +206,10 @@ const Homepage = () => {
             <span className=" text-yellow-400 md:text-6xl text-3xl text-right desktop:text-[36px] font-bold"></span>
 
             <div className="flex items-center justify-center gap-4 mt-4">
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/samuelonyekajohnson?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer">
                 <FaFacebook className='w-9 h-9 text-slate-400' />
               </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/africa__footballec" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className='w-9 h-9 text-slate-400' />
               </a>
               <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
@@ -306,9 +306,9 @@ const Homepage = () => {
         </section>
         <section>
           <div className='text-center'>
-            <p className='text-blue-600 text-lg sm:text-xl md:text-2xl'>What We Do</p>
-            <h1 className='text-3xl sm:text-4xl md:text-5xl'>Our main events</h1>
-            <h3 className='mt-5 text-blue-600 text-sm sm:text-md md:text-lg mx-4 sm:mx-12 md:mx-20 md:px-12 lg:px-40 mx-36'>
+            <p className='text-blue-600 text-lg'>What We Do</p>
+            <h1 className='text-2xl sm:text-3xl md:text-4xl font-meduim'>Our main events</h1>
+            <h3 className='mt-3 text-slate-500 text-md md:text-lg mx-4 sm:mx-12 md:mx-20 md:px-12 lg:px-40 mx-36'>
               We believe that it is important to make a tournament a lifelong memory. With moments for everyone – moments of harmony and fellowship - moments where everyone comes together.
             </h3>
           </div>
@@ -319,8 +319,8 @@ const Homepage = () => {
                 <div className="flex items-center mt-2">
                   <>{evnt.icon}</>
                   <div>
-                    <p className="text-sm font-semibold">{evnt.title}</p>
-                    <p className="text-sm">{evnt.text}</p>
+                    <p className="font-semibold">{evnt.title}</p>
+                    <p className="">{evnt.text}</p>
                   </div>
                 </div>
               </div>
@@ -330,7 +330,7 @@ const Homepage = () => {
         <section className='bg-gradient-to-r from-blue-50 to-blue-sky-400'>
           <div className='text-center  '>
             <h1 className='text-2xl text-sky-400'>Testimonials</h1>
-            <h1 className='mt-3 px-8 text-3xl font-bold'>We have worked with thousands of amazing people around the world</h1>
+            <h1 className='mt-3 px-12 text-3xl font-bold'>We have worked with thousands of amazing people around the world</h1>
           </div>
           <div className='testimonials mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 h-full w-full px-6 md:px-16'>
             {testimonyEvent.map((testimony, index) => (
@@ -338,9 +338,9 @@ const Homepage = () => {
                 <div className='flex items-start gap-4'>
                   <img className='rounded-full w-10 h-10 md:w-12 md:h-12' src={testimony.img} alt="test-img" />
                   <div>
-                    <h3>{testimony.text}</h3>
-                    <p className="font-[600]">{testimony.title}</p>
-                    <p className='text-[13px]'>{testimony.country}</p>
+                    <h3><FaRegCommentDots className='text-slate-500' />{testimony.text}</h3>
+                    <p className="font-[600] text-slate-500 mt-2">{testimony.title}</p>
+                    <p className='text-[13px] text-slate-500'>{testimony.country}</p>
                   </div>
                 </div>
               </div>
