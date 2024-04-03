@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 const Footer = () => {
-  // const navigate = useNavigate();
+  
   const data = participantsData;
   const [state, handleSubmit] = useForm("xkndqnvl");
 
@@ -20,7 +20,7 @@ const Footer = () => {
 
   return (
     <>
-      <div className='bg-sky-950 text-white'>
+      <div className=" bg-sky-950 text-white">
         <div className='lg:flex flex-col md:flex-row justify-between py-8 px-4 md:px-16 '>
           <form onSubmit={handleSubmit} className='flex flex-col flex-wrap'>
             <p className='mb-6 text-lg md:text-xl'>SEND US AN EMAIL</p>

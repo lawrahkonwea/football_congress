@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
+
 import { motion } from 'framer-motion';
 import { useLocation, Link } from 'react-router-dom';
 import { ReactComponent as List } from '../../assets/svg/list terms.svg';
@@ -8,7 +10,11 @@ import Streetphoto from "../../assets/streetphoto.jpg";
 import Singleplayer from "../../assets/single player.jpg"
 import Throwplayer from "../../assets/throwplayer.jpg";
 import Femaleplayer from "../../assets/femaleplayer.jpg";
-import { FaExclamationCircle } from "react-icons/fa";
+import Capman from "../../assets/yoruba testimonial.jpg"
+import Young from "../../assets/young testimonial.jpeg"
+import { FaStarOfDavid } from "react-icons/fa";
+import { GiLaurelsTrophy } from "react-icons/gi";
+import { GiHeadShot } from "react-icons/gi";
 import { BiLogoDribbble } from 'react-icons/bi';
 import Tournament from '../../assets/tornament.jpg';
 import Screening from '../../assets/screening-football.jpg'
@@ -28,6 +34,17 @@ import { FaRegCommentDots } from "react-icons/fa6";
 import "./index.css";
 
 const Homepage = () => {
+
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+  });
+  const [scrollY, setScrollY] = useState(false);
+
+  useEffect(() => {
+    if (inView) {
+      setScrollY(true);
+    }
+  }, [inView]);
 
   const [cards] = useState([
     { id: 1, title: 'Card 1', image: Singleplayer, text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
@@ -89,35 +106,33 @@ const Homepage = () => {
   const mainEvents = [
     {
       img: Tournament,
-      icon: <FaExclamationCircle className="w-8 h-8 mr-2" />,
+      icon: <GiLaurelsTrophy alt="logo" className='text-2xl text-white' />,
       title: "Tournament Hosting",
-      text: "Hosting tournaments is more than just organizing matches; it's about fostering a sense of community, promoting sportsmanship, and nurturing talent. At Afec Football Congress, we take pride in providing top-notch facilities, fair play, and memorable experiences for both players and fans. From grassroots tournaments to prestigious championships, we strive to create an atmosphere where passion for the game thrives and dreams take flight.",
+      text: "Hosting tournaments goes beyond matches; it's about community, sportsmanship, and talent nurturing. At Afec Football Congress, we offer top facilities, fair play, and memorable experiences. From grassroots to championships, we create an atmosphere where passion thrives and dreams take flight.",
       id: 1,
     },
     {
       img: Screening,
-      icon: <FaExclamationCircle alt="logo" className="w-8 h-8 mr-2" />,
+      icon: <FaStarOfDavid alt="logo" className='text-2xl text-white' />,
       title: "Screening and scouting",
-      text: "lorem Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      text: "We meticulously screen and scout for talent. Our process is dedicated to identifying individuals who not only possess exceptional skill but also align with our values of commitment and growth.  We leave no stone unturned in our pursuit of top talent, ensuring our team is comprised of the best individuals both on and off the field.",
       id: 2,
     },
     {
       img: Femaletournament,
-      icon: <FaExclamationCircle className="w-8 h-8 mr-2" />,
+      icon: <GiLaurelsTrophy alt="logo" className='text-2xl text-white' />,
       title: "Female Tournaments",
-      text: "lorem Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      text: "We champion equality in sports, hosting tournaments for female athletes. Our commitment extends beyond the pitch, fostering a supportive environment for talent to flourish. We showcase female prowess, inspire future generations, and contribute to women's football growth.",
       id: 3,
     },
     {
       img: Disabled,
-      icon: <FaExclamationCircle alt="logo" className="w-8 h-8 mr-2" />,
+      icon: <GiHeadShot alt="logo" className='text-2xl text-white' />,
       title: "Amputee/Disabled",
-      text: "lorem Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      text: "We celebrate diversity in football, offering opportunities for amputee and disabled players to showcase their skills and inspire others. it has been beautiful as we see dreams come to life. Together, let's champion equality and inclusion on the field, fostering a community where everyone can thrive",
       id: 4,
     },
   ]
-
-
 
   const helpOpt = [
     {
@@ -142,28 +157,29 @@ const Homepage = () => {
     {
       text: "This is the kind of inter-schools tournament that will enable African Countries to develop grassroot football and detect the future class football players",
       img: Fifa,
-      title: "Gerald Osifo",
+      title: "Giovani Vincenzo Infantino",
       country: "Italy",
     },
     {
       text: "When I was growing up, I realised that not everyone has the same opportunities. It makes me so happy to have been able to help create opportunities for young people through the Afec Football – young people who may not always have the best conditions. And of course, Afec, which has done an amazing job.",
-      img: President ,
+      img: President,
       title: "Samuel V.O Johnson",
       country: "Nigeria",
     },
     {
-      text: "lorem Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-      img: Tournament,
+      text: "It is a great honor to be part of this family and contribute to providing thousands of young African players with the unique experience of multiculturalism through football. Accepting this challenge was daunting, but I am increasingly proud to help fulfill dreams and create lifelong memories for our community.",
+      img: Young,
       title: "Gerald Osifo",
-      country: "Nigeria",
+      country: "Monrovia",
     },
     {
-      text: "lorem Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-      img: Tournament,
-      title: "Gerald Osifo",
-      country: "Nigeria",
+      text: "Being part of Afec Football Congress has been an incredible journey. The sense of belonging to a community that values diversity, inclusivity, and excellence in football is truly inspiring.",
+      img: Capman,
+      title: "Garry Greatman",
+      country: "Liberia",
     }
   ]
+
 
   // span on hero section
   useEffect(() => {
@@ -305,21 +321,23 @@ const Homepage = () => {
           </div>
         </section>
         <section>
-          <div className='text-center'>
-            <p className='text-blue-600 text-lg'>What We Do</p>
+          <div className={`${scrollY ? 'animate__slideInUp' : ''} animate__animated flex-1 text-center`} ref={ref}>
+            <p className='text-blue-600 text-lg mt-8'>What We Do</p>
             <h1 className='text-2xl sm:text-3xl md:text-4xl font-meduim'>Our main events</h1>
             <h3 className='mt-3 text-slate-500 text-md md:text-lg mx-4 sm:mx-12 md:mx-20 md:px-12 lg:px-40 mx-36'>
               We believe that it is important to make a tournament a lifelong memory. With moments for everyone – moments of harmony and fellowship - moments where everyone comes together.
             </h3>
           </div>
-          <div className="main-event items-center grid grid-cols-1 md:grid-cols-2 gap-8 h-full w-full px-6 justify-center gap-6 my-8 ">
+          <div className=" main-event items-center grid grid-cols-1 md:grid-cols-2 gap-8 h-full w-full px-6 justify-center gap-6 my-8 ">
             {mainEvents.map((evnt, index) => (
               <div className='w-full px-8 event_container' key={index}>
-                <img src={evnt.img} alt="action" className="rounded-2xl w-full h-auto max-h-60" />
-                <div className="flex items-center mt-2">
-                  <>{evnt.icon}</>
+                <img src={evnt.img} alt="action" className="rounded-2xl w-full h-auto max-h-60 mb-8" />
+                <div className="flex items-start mt-2">
+                  <div className={`w-14 h-14 mr-4 ${evnt.id === 2 || evnt.id === 3 ? 'bg-yellow-400' : 'bg-sky-600'} rounded-lg p-4 inline-block`}>
+                    {evnt.icon}
+                  </div>
                   <div>
-                    <p className="font-semibold">{evnt.title}</p>
+                    <p className="font-semibold mb-3">{evnt.title}</p>
                     <p className="">{evnt.text}</p>
                   </div>
                 </div>
@@ -327,10 +345,37 @@ const Homepage = () => {
             ))}
           </div>
         </section>
+        <section className=''>
+          <div className=''>
+            <div className='text-center'>
+              <h1 className='font-bold text-5xl my-4 mt-60'>Afec 2024</h1>
+              <p className='text-slate-500 px-8 mb-8'>In 2024 the 3rd edition of Afec Tournament were held. 20740 goals were scored and matches were played on 107 pitches.</p>
+            </div>
+
+            <div className='md:flex flex-col items-center justify-center ' ref={ref}>
+              <div className='text-center md:flex-row flex flex-col gap-4 md:gap-1'>
+                <div className='bg-white custom-shadow py-6 px-24 rounded-md'>
+                  <h1 className={`font-bold text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>200</h1>
+                   <p className='text-slate-500'>Teams</p>
+                </div>
+                <div className='bg-white custom-shadow py-6 px-24 rounded-md'>
+                  <h1 className={`font-bold text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>20</h1>
+                  <p className='text-slate-500'>Countries</p>
+                </div>
+                <div className='bg-white custom-shadow py-6 px-24 rounded-md'>
+                  <h1 className={`font-bold text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>10</h1>
+                  <p className='text-slate-500'>Matches</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
         <section className='bg-gradient-to-r from-blue-50 to-blue-sky-400'>
-          <div className='text-center  '>
+          <div className='text-center px-12 mt-60'>
             <h1 className='text-2xl text-sky-400'>Testimonials</h1>
-            <h1 className='mt-3 px-12 text-3xl font-bold'>We have worked with thousands of amazing people around the world</h1>
+            <h1 className='mt-3 text-2xl font-semibold'>We have worked with thousands of amazing people around the world</h1>
           </div>
           <div className='testimonials mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 h-full w-full px-6 md:px-16'>
             {testimonyEvent.map((testimony, index) => (
@@ -338,7 +383,7 @@ const Homepage = () => {
                 <div className='flex items-start gap-4'>
                   <img className='rounded-full w-10 h-10 md:w-12 md:h-12' src={testimony.img} alt="test-img" />
                   <div>
-                    <h3><FaRegCommentDots className='text-slate-500' />{testimony.text}</h3>
+                    <h3><FaRegCommentDots className='text-slate-500 text-sm' />{testimony.text}</h3>
                     <p className="font-[600] text-slate-500 mt-2">{testimony.title}</p>
                     <p className='text-[13px] text-slate-500'>{testimony.country}</p>
                   </div>
