@@ -21,7 +21,7 @@ import Screening from '../../assets/screening-football.jpg'
 import Femaletournament from "../../assets/female-tornament.jpg";
 import Disabled from "../../assets/disabled.jpg";
 import Fifa from "../../assets/Fifa President.jpg"
-import President from "../../assets/Afec-president.jpg"
+import President from "../../assets/afec-president.jpg"
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { AiOutlineYoutube } from "react-icons/ai";
