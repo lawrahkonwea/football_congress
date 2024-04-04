@@ -10,9 +10,9 @@ const ParticipantsDetail = () => {
 
   return (
     <div className="pt-[140px]">
-      <nav className="flex justify-between items-center gap-2 px-4 mb-4">
+      <nav className="flex justify-between items-center flex-wrap gap-2 px-4 mb-4">
         <p className="text-[20px] font-[500] text-[#000]">{tournamentDetail[0].title}</p>
-        <div className="flex gap-4 items-center">
+        <div className="flex flex-wrap gap-4 items-center">
           {tournamentDetails.slice(0, 3).map((td, index) => (
             <div key={index} onClick={() => navigate(`/tournament_details/${td.id}`)}>
               {td.title !== tournamentDetail[0].title ? (
