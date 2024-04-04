@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useLocation, Link } from 'react-router-dom';
 import { ReactComponent as List } from '../../assets/svg/list terms.svg';
 import VideoBg from "../../assets/football-video.mp4";
-import Femaleaction from "../../assets/femaleaction.jpg";
+import Femaleaction from "../../assets/grassroot_female.jpg";
 import Streetphoto from "../../assets/streetphoto.jpg";
 import Singleplayer from "../../assets/single player.jpg"
 import Throwplayer from "../../assets/throwplayer.jpg";
@@ -30,6 +30,7 @@ import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { Typed } from 'react-typed'
 import { FaRegCommentDots } from "react-icons/fa6";
+import logo from "../../assets/AFEC LOGO 3.png";
 
 import "./index.css";
 
@@ -47,11 +48,11 @@ const Homepage = () => {
   }, [inView]);
 
   const [cards] = useState([
-    { id: 1, title: 'Card 1', image: Singleplayer, text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-    { id: 2, title: 'Card 2', image: Streetphoto, text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.' },
-    { id: 3, title: 'Card 3', image: Femaleplayer, text: 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.' },
-    { id: 4, title: 'Card 4', image: Throwplayer, text: 'Etiam porta sem malesuada magna mollis euismod.' },
-    { id: 5, title: 'Card 5', image: Femaleaction, text: 'Etiam porta sem malesuada magna mollis euismod.' },
+    { id: 1, subTitle: 'Afec Football', title: 'Lagos State FA Cup Final', image: Singleplayer, text: 'The Lagos State FA Cup Finals opened with grandeur and excitement. The event showcased the best of Lagos football culture, with teams ready to compete for victory.', date:'31st, March 2024.' },
+    { id: 2, subTitle: 'Afec Football', title: 'Refugee Football Tournament', image: Streetphoto, text: 'The refugee football tournament for peace in Monrovia to promote peace in the Country. It was accompanied with great ethusiasm and zeal for the better good. ', date:'20th, Feb 2024.' },
+    { id: 3, subTitle: 'Meet the world', title: '13th African Games Accra', image: Femaleplayer, text: ' Set against the backdrop of empowerment and athleticism, the event was a fierce competition and unforgettable moments on the field. Stay tuned as female athletes showcase their talent and passion for the beautiful game.',date:'20th, March 2024.' },
+    { id: 4, subTitle: 'Afec Football', title: 'New Football Tournament to kickoff', image: Throwplayer, text: 'The tournament schdeuled for October this year is set to commence in ikorodu and will bear the nameAyangbure of Ikorodu', date:'4th, March 2024.' },
+    { id: 5, subTitle: 'Afec Football', title: 'Football association in Conjunction with Lagos State', image: Femaleaction, text: 'The Lagos State Football Association held a seminar in conjunction with Lagos State Domestic and Sexual Violence Agency for the girl child', date:'18th, March 2024.'  },
   ]);
 
   const boxRef = useRef(null);
@@ -257,7 +258,7 @@ const Homepage = () => {
         </div>
       </section>
       <div className="px-4 mb-6">
-        <div className="bg-gradient-to-r from-blue-50 to-blue-sky-400 flex mr-8 flex-col w-full justify-center mt-[40%] md:mt-[13%] ">
+        <div className="bg-gradient-to-r from-blue-80 to-blue-sky-500 flex mr-8 flex-col w-full justify-center mt-[40%] md:mt-[13%] ">
           <div>
             <h1 className='font-extrabold text-4xl items-start mx-8 mt-3'>Latest News</h1>
           </div>
@@ -269,13 +270,23 @@ const Homepage = () => {
             >
               <MdOutlineArrowBackIosNew className='md:hidden lg:block text-4xl text-blue-400 border-none' />
             </button>
-            <div className="flex swiper-wrapper ml-[-10%] md:ml-[-3%] w-full overflow-x-auto xscrollbar h-full p-5" ref={boxRef}>
+            <div className="flex swiper-wrapper ml-[-10%] md:ml-[-3%] w-full overflow-x-auto xscrollbar h-full p-6" ref={boxRef}>
               {cards.map(card => (
                 <div key={card.id} className="custom-shadow card_container bg-white m-4 w-[200px] rounded-lg ">
                   <img src={card.image} alt={card.title} className="justify-center h-[200px] w-full rounded-md" />
                   <div className="p-4">
-                    <p className="text-center mt-2 text-xl font-semibold">{card.title}</p>
-                    <p className="text-center mt-2 text-gray-900">{card.text}</p>
+                    <p className='text-start text-blue-400'>{card.subTitle}</p>
+                    <p className="text-start mt-2 text-xl font-semibold">{card.title}</p>
+                    <p className="text-start mt-2 text-slate-500">{card.text}</p>
+                  </div>
+                  <div className='flex items-start gap-2'>
+                    <div className="rounded-full p-4 flex items-center">
+                      <img src={logo} className='rounded-full w-10 h-10 md:w-12 md:h-12' alt="Logo" />
+                    </div>
+                    <div className='mt-4 mb-6'>
+                      <p className="mb-1 font-meduim">AFEC</p>
+                      <p className="text-sm text-gray-500">{card.date}</p>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -323,7 +334,7 @@ const Homepage = () => {
         <section>
           <div className={`${scrollY ? 'animate__slideInUp' : ''} animate__animated flex-1 text-center`} ref={ref}>
             <p className='text-blue-600 text-lg mt-8'>What We Do</p>
-            <h1 className='text-2xl sm:text-3xl md:text-4xl font-meduim'>Our main events</h1>
+            <h1 className='text-2xl sm:text-3xl md:text-4xl font-bold'>Our main events</h1>
             <h3 className='mt-3 text-slate-500 text-md md:text-lg mx-4 sm:mx-12 md:mx-20 md:px-12 lg:px-40 mx-36'>
               We believe that it is important to make a tournament a lifelong memory. With moments for everyone – moments of harmony and fellowship - moments where everyone comes together.
             </h3>
@@ -348,7 +359,7 @@ const Homepage = () => {
         <section className=''>
           <div className=''>
             <div className='text-center'>
-              <h1 className='font-bold text-5xl my-4 mt-60'>Afec 2024</h1>
+              <h1 className='font-bold text-5xl my-4 mt-44'>Afec 2024</h1>
               <p className='text-slate-500 px-8 mb-8'>In 2024 the 3rd edition of Afec Tournament were held. 20740 goals were scored and matches were played on 107 pitches.</p>
             </div>
 
@@ -356,7 +367,7 @@ const Homepage = () => {
               <div className='text-center md:flex-row flex flex-col gap-4 md:gap-1'>
                 <div className='bg-white custom-shadow py-6 px-24 rounded-md'>
                   <h1 className={`font-bold text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>200</h1>
-                   <p className='text-slate-500'>Teams</p>
+                  <p className='text-slate-500'>Teams</p>
                 </div>
                 <div className='bg-white custom-shadow py-6 px-24 rounded-md'>
                   <h1 className={`font-bold text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>20</h1>
@@ -373,7 +384,7 @@ const Homepage = () => {
 
 
         <section className='bg-gradient-to-r from-blue-50 to-blue-sky-400'>
-          <div className='text-center px-12 mt-60'>
+          <div className='text-center px-12 mt-44'>
             <h1 className='text-2xl text-sky-400'>Testimonials</h1>
             <h1 className='mt-3 text-2xl font-semibold'>We have worked with thousands of amazing people around the world</h1>
           </div>

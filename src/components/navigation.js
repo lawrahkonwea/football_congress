@@ -89,12 +89,12 @@ const Navigation = () => {
       <main className=''>
         <section className="fixed w-full z-50 navbar">
           <div className='flex justify-between items-center bg bg-yellow-400 w-full  p-2 px-16 text-white font-sans'>
-            <div className='hidden lg:flex text-3xl'> <FcGlobe /></div>
+            <div className='hidden lg:flex text-3xl mr-5'> <FcGlobe /></div>
             <div className='flex items-center justify-between '>
-              <h3>Gothia Cup 2024 now fully booked!</h3>
+              <h3>AFEC Football 2024 now fully Open!</h3>
             </div>
             <div className='hidden lg:flex'>
-              <h3>Create Account</h3>
+              <h3>Register with us!</h3>
             </div>
           </div>
           <nav className='flex bg-sky-700 justify-between py-2 px-8 items-center lg:px-10 '>
@@ -136,7 +136,7 @@ const Navigation = () => {
               'fixed h-screen w-screen md:hidden top-0 right-0 -translate-x-full transition-all', sideMenuOpen && 'translate-x-0'
             )}
             >
-              <section className='overflow-y-auto text-blue-400 bg-white rounded-lg flex-col absolute left-4 top-4 h-5/6 w-11/12 p-8 gap-8 z-50 flex '>
+              <section className='overflow-y-auto text-gray-500 bg-white rounded-lg flex-col absolute left-4 top-4 h-5/6 w-11/12 p-8 gap-8 z-50 flex '>
                 <div className='flex justify-between'>
                   <RiCloseLine onClick={() => setMenu(false)} className='mt-2 text-3xl cursor-pointer' />
                   <img className='w-12' src={logo} alt='ball' /></div>

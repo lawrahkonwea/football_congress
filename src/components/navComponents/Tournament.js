@@ -1,5 +1,5 @@
 import React  from 'react';
-import { FaExclamationCircle } from "react-icons/fa";
+import { GiLaurelsTrophy } from "react-icons/gi";
 import { tournamentData } from './data/tournamentData';
 import { useNavigate } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ const Tournament = ({ closeModal }) => {
               navigate(`/centers_details/${centersDetail.id}`);
               closeModal();
             }}>
-            <FaExclamationCircle className='text-4xl mt-1 mr-4' />
+            <GiLaurelsTrophy className='text-4xl mt-1 mr-4' />
             <div>
               <p className='font-bold'>{centersDetail.title}</p>
               <p>{centersDetail.desc}</p>
