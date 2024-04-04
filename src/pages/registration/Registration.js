@@ -67,6 +67,7 @@ const Registration = () => {
 
 
   const Receipt = () => (
+    <>
     <div className="max-w-lg mx-auto p-4 bg-white shadow-md">
         <div className="flex justify-between items-start gap-2 my-4">
           <h1 className="text-2xl font-bold mb-4 text-center border-b-2 border-gray-300 pb-2">PARTICIPATING FOOTBALL TEAM INFORMATION</h1>
@@ -121,6 +122,7 @@ const Registration = () => {
           </div>
         </form>
       </div>
+      </>
   );
 
   const handleDownload = () => {
@@ -155,6 +157,9 @@ const Registration = () => {
         pauseOnHover
         theme="dark"
       />
+      <div>
+      <h1 className='font-bold text-3xl text-center text-slate-500'>Registration Form</h1>
+    </div>
       <div class="max-w-md mx-auto py-8 px-4 bg-white shadow-md rounded-lg my-4">
         <form id="form" ref={form} onSubmit={sendEmail} className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div className="mb-4">
@@ -240,7 +245,9 @@ const Registration = () => {
         <button class="bg-blue-500 text-white py-2 px-4 rounded-md cursor-pointer" type='button' onClick={() => handleDownload()}>Download form</button>
       </div>
     </div>
+    
   );
+  
 };
 
 export default Registration;

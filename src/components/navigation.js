@@ -45,7 +45,7 @@ const Navigation = () => {
       link: "/aboutus"
     },
     {
-      label: "Donate",
+      label: "Account",
       link: "/donate"
     }
     
@@ -88,10 +88,10 @@ const Navigation = () => {
       {/* top section before nav */}
       <main className=''>
         <section className="fixed w-full z-50 navbar">
-          <div className='flex justify-between items-center bg bg-yellow-400 w-full  p-2 px-16 text-white font-sans'>
-            <div className='hidden lg:flex text-3xl mr-5'> <FcGlobe /></div>
-            <div className='flex items-center justify-between '>
-              <h3>AFEC Football 2024 now fully Open!</h3>
+          <div className='flex justify-between items-center text-center bg bg-yellow-400 w-full  py-2 px-12 text-white font-sans'>
+            <div className='hidden lg:flex text-3xl '> <FcGlobe /></div>
+            <div className='flex items-center text-center justify-between '>
+              <h3 className=''>AFEC Football 2024 now fully Open!</h3>
             </div>
             <div className='hidden lg:flex'>
               <NavLink to="/register">Register with us!</NavLink>
@@ -136,16 +136,16 @@ const Navigation = () => {
               'fixed h-screen w-screen md:hidden top-0 right-0 -translate-x-full transition-all', sideMenuOpen && 'translate-x-0'
             )}
             >
-              <section className='overflow-y-auto text-gray-500 bg-white rounded-lg flex-col absolute left-4 top-4 h-5/6 w-11/12 p-8 gap-8 z-50 flex '>
+              <section className='overflow-y-auto  bg-white rounded-lg flex-col absolute left-4 top-4 h-5/6 w-11/12 p-8 gap-8 z-50 flex '>
                 <div className='flex justify-between'>
                   <RiCloseLine onClick={() => setMenu(false)} className='mt-2 text-3xl cursor-pointer' />
                   <img className='w-12' src={logo} alt='ball' /></div>
 
                 
-                <div className=''>
+                <div className='text-blue-950'>
                   <button onClick={() => handleParticipationSideModal()}>
                   <div  className='flex items-center'>
-                  <span>Your Participation</span>
+                  <span className='text-lg font-medium'>Your Participation</span>
                   <RiArrowDropDownLine  className='cursor pointer ml-[16px] text-4xl' />
                   </div>
                 {sideMenu.map((evnt, index) => (
@@ -161,7 +161,7 @@ const Navigation = () => {
                 <div className=''>
                   <button onClick={() => handleTournamentSideModal()}>
                   <div  className='flex items-center'>
-                  <span>Tournament</span>
+                  <span className='text-lg font-medium'>Tournament</span>
                   <RiArrowDropDownLine  className='cursor pointer text-4xl' />
                   </div>
                 {sideTournament.map((evnt, index) => (
@@ -173,8 +173,8 @@ const Navigation = () => {
                 ))}
                 </button>
                 </div>
-                <NavLink onClick={() => setMenu(false)} to="/aboutus">About</NavLink>
-                <NavLink onClick={() => setMenu(false)} to="/donate">Donate</NavLink>
+                <NavLink className='text-lg font-medium' onClick={() => setMenu(false)} to="/aboutus">About</NavLink>
+                <NavLink className='text-lg font-medium' onClick={() => setMenu(false)} to="/donate">Donate</NavLink>
   
               </section>
             </div>

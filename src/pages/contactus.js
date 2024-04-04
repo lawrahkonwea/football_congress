@@ -5,7 +5,7 @@ import { MdAlternateEmail } from "react-icons/md";
 import { BsWhatsapp } from "react-icons/bs";
 import President from '../assets/afec-president.jpg'
 import Howard from '../assets/Howard jones.jpg'
-import Randy from '../assets/Randy Moore.jpg'
+import Randy from '../assets/Randy moore.jpg'
 import Vice from '../assets/afec-vice.jpg'
 import Developer from '../assets/Developer.jpg'
 import Fifa from '../assets/Fifa President.jpg'
@@ -61,7 +61,6 @@ const Contactus = () => {
               <img className='bg-zinc-400 md:w-[250px] md:h-[250px] w-full h-auto rounded-lg mb-2' src={Fifa} alt='members' />
               <h3 className='font-semibold'>Giovanni Vincenzo Infantino</h3>
               <p>Fifa President</p>
-              {/* Add more text or elements here */}
             </div>
           </div>
 
