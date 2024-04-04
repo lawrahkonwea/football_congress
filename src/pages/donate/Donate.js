@@ -7,7 +7,7 @@ const Donate = () => {
 
   const handleCopy = () => {
     // Copy the account number to the clipboard
-    const accountNumber = '1234567890'; // Replace this with your actual account number
+    const accountNumber = '1310663493'; // Replace this with your actual account number
     navigator.clipboard.writeText(accountNumber);
 
     // Set copied to true to show the copied alert
@@ -16,7 +16,7 @@ const Donate = () => {
     // Reset copied state after 3 seconds
     setTimeout(() => {
       setCopied(false);
-    }, 3000);
+    }, 1000);
   };
 
   return (

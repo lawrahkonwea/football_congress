@@ -2,10 +2,13 @@ import React from 'react'
 import { useForm, ValidationError } from '@formspree/react';
 import { participantsData } from './navComponents/data/participantsData';
 import { Link } from 'react-router-dom';
-
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { AiOutlineYoutube } from "react-icons/ai";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
-  
+
   const data = participantsData;
   const [state, handleSubmit] = useForm("xkndqnvl");
 
@@ -51,7 +54,7 @@ const Footer = () => {
               field="message"
               errors={state.errors}
             />
-            <button className='rounded-lg border mt-3 w-full md:w-24 bg-sky-100 p-2' type="submit" disabled={state.submitting}>
+            <button className='rounded-lg border mt-3 w-full md:w-24 bg-sky-250 p-2' type="submit" disabled={state.submitting}>
               Send
             </button>
           </form>
@@ -68,6 +71,26 @@ const Footer = () => {
               <Link to={`/tournament_details/${evnt.id}`} className='block mb-2' key={index}>{evnt.title}</Link>
             ))}
             <Link to="/donate" className='block mb-2'>AFEC Account</Link>
+          </div>
+        </div>
+        <div className="my-4 px-6">
+          <hr />
+        </div>
+        <div className="pb-[5%]">
+          <p className="text-center py-4 text-[14px]">&copy; 2024 AFEC Africa. All rights reserved. Integrity policy</p>
+          <div className="flex items-center justify-center gap-4 pb-4">
+            <a href="https://www.facebook.com/samuelonyekajohnson?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer">
+              <FaFacebook className='w-9 h-9 text-slate-400' />
+            </a>
+            <a href="https://www.instagram.com/africa__footballec" target="_blank" rel="noopener noreferrer">
+              <FaInstagram className='w-9 h-9 text-slate-400' />
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+              <AiOutlineYoutube className='w-9 h-9 text-slate-400' />
+            </a>
+            <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
+              <FaWhatsapp className='w-9 h-9 text-slate-400' />
+            </a>
           </div>
         </div>
       </div>

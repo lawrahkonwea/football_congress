@@ -8,8 +8,8 @@ import Donate from './pages/donate/Donate';
 import ParticipantsDetail from './components/navComponents/participantsDetail/ParticipantsDetail';
 import TournamentDetail from './components/navComponents/tournamentDetail/TournamentDetail';
 import Footer from './components/footer';
-import About from './components/navComponents/About';
-import Contactus from './components/navComponents/contactus';
+import About from './pages/About';
+import Contactus from './pages/contactus';
 import Registration from './pages/registration/Registration';
 
 export default function App() {

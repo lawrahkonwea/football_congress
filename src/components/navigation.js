@@ -94,7 +94,7 @@ const Navigation = () => {
               <h3>AFEC Football 2024 now fully Open!</h3>
             </div>
             <div className='hidden lg:flex'>
-              <h3>Register with us!</h3>
+              <NavLink to="/register">Register with us!</NavLink>
             </div>
           </div>
           <nav className='flex bg-sky-700 justify-between py-2 px-8 items-center lg:px-10 '>

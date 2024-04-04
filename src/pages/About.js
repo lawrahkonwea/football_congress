@@ -1,6 +1,6 @@
 import React from 'react'
 // import Manual from '../../assets/question.png'
-import Light from '../../assets/vector.png';
+import Light from '../assets/vector.png';
 // import HackathonGuy from '../../assets/man-wearing-smart-glasses-touching-virtual-screen 1.png';
 import { FaExclamationCircle } from "react-icons/fa";
 import { GiHeadShot } from "react-icons/gi";
@@ -34,7 +34,7 @@ const About = () => {
   return (
     <>
       <div className='px-4 pt-[150px] overflow-hidden'>
-        <div className='px-6 ml-16'>
+        <div className='px-6 md:ml-16'>
           <div className='flex lg:flex-row flex-col justify-around w-full items-center'>
             <div className='animate__fadeInDown w-[100%] '>
               <h1 className='text-sky-950 text-5xl font-bold'>AFEC Football</h1>
