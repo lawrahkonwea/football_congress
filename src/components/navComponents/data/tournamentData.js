@@ -78,7 +78,7 @@ export const tournamentData = [
     desc: 'An evening to remember',
     content: [
       {
-        ruleTitle: "1. Coming Soon",
+        ruleTitle: "1. COMING SOON",
         ruleDesc: "All informations will be gotten here",
       },
       {
