@@ -61,7 +61,6 @@ const Contactus = () => {
               <img className='bg-zinc-400 md:w-[250px] md:h-[250px] w-full h-auto rounded-lg mb-2' src={Fifa} alt='members' />
               <h3 className='font-semibold'>Giovanni Vincenzo Infantino</h3>
               <p>Fifa President</p>
-              {/* Add more text or elements here */}
             </div>
           </div>
 

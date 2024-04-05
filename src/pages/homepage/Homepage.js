@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
-
 import { motion } from 'framer-motion';
 import { useLocation, Link } from 'react-router-dom';
 import { ReactComponent as List } from '../../assets/svg/list terms.svg';
@@ -20,7 +19,7 @@ import Tournament from '../../assets/tornament.jpg';
 import Screening from '../../assets/screening-football.jpg'
 import Femaletournament from "../../assets/female-tornament.jpg";
 import Disabled from "../../assets/disabled.jpg";
-import Fifa from "../../assets/Fifa President.jpg"
+import Testimonial from "../../assets/testimonial-female.jpg"
 import President from "../../assets/afec-president.jpg"
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -157,9 +156,9 @@ const Homepage = () => {
   const testimonyEvent = [
     {
       text: "This is the kind of inter-schools tournament that will enable African Countries to develop grassroot football and detect the future class football players",
-      img: Fifa,
-      title: "Giovani Vincenzo Infantino",
-      country: "Italy",
+      img: Testimonial,
+      title: "Fatima Amina Safiya",
+      country: "Morocco",
     },
     {
       text: "When I was growing up, I realised that not everyone has the same opportunities. It makes me so happy to have been able to help create opportunities for young people through the Afec Football – young people who may not always have the best conditions. And of course, Afec, which has done an amazing job.",
@@ -360,21 +359,21 @@ const Homepage = () => {
           <div className=''>
             <div className='text-center'>
               <h1 className='font-bold text-5xl my-4 mt-44'>Afec 2024</h1>
-              <p className='text-slate-500 px-8 mb-8'>In 2024 the 3rd edition of Afec Tournament were held. 20740 goals were scored and matches were played on 107 pitches.</p>
+              <p className='text-slate-500 px-8 mb-8'>In 2024 the Afec Tournament will be held. Over 200 goals have been scored and matches were played on over 50 pitches.</p>
             </div>
 
             <div className='md:flex flex-col items-center justify-center ' ref={ref}>
               <div className='text-center md:flex-row flex flex-col gap-4 md:gap-1'>
                 <div className='bg-white custom-shadow py-6 px-24 rounded-md'>
-                  <h1 className={`font-bold text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>200</h1>
+                  <h1 className={`font-bold text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>50</h1>
                   <p className='text-slate-500'>Teams</p>
                 </div>
                 <div className='bg-white custom-shadow py-6 px-24 rounded-md'>
-                  <h1 className={`font-bold text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>20</h1>
+                  <h1 className={`font-bold text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>30</h1>
                   <p className='text-slate-500'>Countries</p>
                 </div>
                 <div className='bg-white custom-shadow py-6 px-24 rounded-md'>
-                  <h1 className={`font-bold text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>10</h1>
+                  <h1 className={`font-bold text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>200</h1>
                   <p className='text-slate-500'>Matches</p>
                 </div>
               </div>

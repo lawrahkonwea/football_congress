@@ -21,7 +21,7 @@ const Donate = () => {
 
   return (
     <div className="pt-[140px] px-8">
-      <div className="bg-[#fff] my-4 p-4 w-fit m-auto rounded-[10px]">
+      <div className="custom-shadow bg-[#fff] my-4 p-4 w-fit m-auto rounded-[10px] mb-6">
         <h1 className="text-[24px] font-[600] py-4">Make payments to this account</h1>
         <div>
           <p className="text-[14px] font-[400]">Account Name</p>
@@ -31,7 +31,7 @@ const Donate = () => {
           <p className="text-[14px] font-[400]">Account Number</p>
           <div className="font-[500] text-[#1369A1] flex gap-[3px]">
             <p>1310663493</p>
-            <button onClick={handleCopy}><MdContentCopy /></button>
+            <button className='ml-4' onClick={handleCopy}><MdContentCopy /></button>
             {copied && <p>Copied!</p>}
           </div>
         </div>

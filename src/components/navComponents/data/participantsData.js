@@ -91,9 +91,9 @@ export const participantsData = [
     desc: "What does it cost",
     content: [
       {
-        ruleTitle: "Competition outlet",
-        ruleDesc: "this detail is not available for now",
-        subRule1: "Coming soon, anticipate"
+        ruleTitle: "The Cost and Fee is relative and not fixed",
+        ruleDesc: "Discussions are open as the fee will be communicated upon discussions",
+        subRule1: "Kindly go to our Accounts page to make payments once decisions have been made. Thank you"
       }
     ],
     id: "tournament_3_abcljkqop",
