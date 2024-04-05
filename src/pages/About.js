@@ -3,7 +3,6 @@ import React from 'react'
 import Light from '../assets/vector.png';
 // import HackathonGuy from '../../assets/man-wearing-smart-glasses-touching-virtual-screen 1.png';
 import { FaExclamationCircle } from "react-icons/fa";
-import { GiHeadShot } from "react-icons/gi";
 
 
 const About = () => {
@@ -42,7 +41,7 @@ const About = () => {
               <p className='mt-5'>AFEC stands as a beacon of global youth football, recognized as the largest and most diverse tournament of its kind. With participation spanning across 80 nations, approximately 1700 teams unite on the field, igniting passion and camaraderie through 4500 exhilarating matches across 110 pitches.</p>
             </div>
 
-            <div className="w-[100%] ml-16 text-center">
+            <div className="w-[100%] md:ml-16 text-center">
               <img
                 src={Light}
                 alt="light"

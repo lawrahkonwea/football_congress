@@ -175,7 +175,8 @@ const Navigation = () => {
                 </div>
                 <NavLink onClick={() => setMenu(false)} to="/aboutus">About</NavLink>
                 <NavLink onClick={() => setMenu(false)} to="/donate">Donate</NavLink>
-  
+                <NavLink onClick={() => setMenu(false)} to="/register">Register</NavLink>
+
               </section>
             </div>
             <section className='flex items-center gap-4 text-3xl'>
