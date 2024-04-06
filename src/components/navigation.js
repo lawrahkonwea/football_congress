@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import Participant from './navComponents/Participant';
 import { FaExclamationCircle } from "react-icons/fa";
+import { GiLaurelsTrophy } from "react-icons/gi";
 import { tournamentData } from './navComponents/data/tournamentData';
 import { participantsData } from './navComponents/data/participantsData';
 import Tournament from './navComponents/Tournament';
+import { GiHeadShot } from "react-icons/gi";
 // import About from './navComponents/About'
 import { FiMenu } from 'react-icons/fi';
 import { BiLogoDribbble } from 'react-icons/bi';
@@ -145,36 +147,45 @@ const Navigation = () => {
                 <div className='text-blue-950'>
                   <button onClick={() => handleParticipationSideModal()}>
                   <div  className='flex items-center'>
+                  <GiHeadShot className='text-2xl mr-2' />
                   <span className='text-lg font-medium'>Your Participation</span>
                   <RiArrowDropDownLine  className='cursor pointer ml-[16px] text-4xl' />
                   </div>
                 {sideMenu.map((evnt, index) => (
                   <Link to={`/tournament_details/${evnt.id}`} onClick={() => setMenu(false)} className='' key={index}>
                     {showParticipationSide ? ( 
-                      <p className='flex items-center gap-3'><FaExclamationCircle className='text-2xl mt-1 mr-4' />{evnt.title}</p>
+                      <p className='flex items-center gap-3'><GiLaurelsTrophy className='text-2xl mt-1 mr-4' />{evnt.title}</p>
                     ) : '' } 
                   </Link>
                 ))}
                 </button>
                 </div>
 
-                <div className=''>
+                <div className='text-blue-950'>
                   <button onClick={() => handleTournamentSideModal()}>
                   <div  className='flex items-center'>
+                  <GiHeadShot className='text-2xl mr-2' />
                   <span className='text-lg font-medium'>Tournament</span>
                   <RiArrowDropDownLine  className='cursor pointer text-4xl' />
                   </div>
                 {sideTournament.map((evnt, index) => (
                   <Link to={`/centers_details/${evnt.id}`} onClick={() => setMenu(false)} className='' key={index}>
                     {showTournamentSide ? ( 
-                      <p className='flex items-center gap-3'><FaExclamationCircle className='text-2xl mt-1 mr-4' />{evnt.title}</p>
+                      <p className='flex items-center gap-3'><GiLaurelsTrophy className='text-2xl mt-1 mr-4' />{evnt.title}</p>
                     ) : '' } 
                   </Link>
                 ))}
                 </button>
                 </div>
+                <div className='flex items-center text-blue-950'>
+                <GiHeadShot className='text-2xl mr-2' />
                 <NavLink className='text-lg font-medium' onClick={() => setMenu(false)} to="/aboutus">About</NavLink>
+                </div>
+                <div className='flex items-center text-blue-950'>
+                <GiHeadShot className='text-2xl mr-2' />
                 <NavLink className='text-lg font-medium' onClick={() => setMenu(false)} to="/donate">Donate</NavLink>
+                </div>
+                
   
               </section>
             </div>

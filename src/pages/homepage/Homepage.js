@@ -299,7 +299,7 @@ const Homepage = () => {
             </button>
           </div>
         </div>
-        <section className="mx-auto bg-sky-950 my-8 md:my-16 py-8 md:py-16 rounded-2xl max-w-6xl ">
+        <section className={`${scrollY ? 'animate__slideInUp' : ''} animate__animated flex-1 mx-auto bg-sky-950 my-8 md:my-16 py-8 md:py-16 rounded-2xl max-w-6xl`} ref={ref}>
           <div className="my-2 md:my-4">
             <p className="font-extrabold text-lg md:text-2xl lg:text-3xl xl:text-4xl text-center text-white">Our Vision</p>
           </div>
@@ -331,7 +331,7 @@ const Homepage = () => {
           </div>
         </section>
         <section>
-          <div className={`${scrollY ? 'animate__slideInUp' : ''} animate__animated flex-1 text-center`} ref={ref}>
+          <div className="text-center">
             <p className='text-blue-600 text-lg mt-8'>What We Do</p>
             <h1 className='text-2xl sm:text-3xl md:text-4xl font-bold'>Our main events</h1>
             <h3 className='mt-3 text-slate-500 text-md md:text-lg mx-4 sm:mx-12 md:mx-20 md:px-12 lg:px-40 mx-36'>

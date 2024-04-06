@@ -31,27 +31,29 @@ const About = () => {
   return (
     <>
       <div className='px-4 pt-[150px] overflow-hidden'>
-        <div className='px-6 md:ml-16 top-0'>
-          <div className='flex lg:flex-row flex-col justify-around w-full items-center'>
-            <div className='animate__fadeInDown w-[100%] '>
+        <div className='px-6 top-0'>
+          <div className='flex md:ml-16 lg:flex-row flex-col justify-between w-full items-center'>
+            <div className='animate__fadeInDown w-full '>
+              <div className='text-center md:text-start '>
               <h1 className='text-sky-950 text-5xl font-bold'>AFEC Football</h1>
               <h2 className='text-sky-600 text-4xl mt-2 font-bold'>Empowerment Congress</h2>
+              </div>
               <p className='mt-5'>AFEC stands as a beacon of global youth football, recognized as the largest and most diverse tournament of its kind. With participation spanning across 80 nations, approximately 1700 teams unite on the field, igniting passion and camaraderie through 4500 exhilarating matches across 110 pitches.</p>
             </div>
 
-            <div className="w-[100%] ml-16 text-center">
+            <div className="w-full md:ml-16 items-center text-center">
               <img
                 src={Light}
                 alt="light"
                 // className="App-logo w-[50%] md:w-[70%] mt-[-350px] md:ml-[-10px] mix-blend-hard-light "
-                className="App-logo  w-[60%] md:w-[70%] mt-8 w-full"
+                className="App-logo  w-[60%] md:w-[70%] mt-4 w-full"
               />
             </div>
           </div>
         </div>
 
-        <div className='text-center'>
-          <p className=''>SINCE 2010</p>
+        <div className='text-center '>
+          <p className='mt-8'>SINCE 2010</p>
           <h1 className='text-4xl font-bold text-sky-950'>AFEC Cup</h1>
           <p className='px-4 md:w-[60%] m-auto mb-8'>It’s the teams, and participants from around the world that make the tournament unique. A meeting place for the world’s youth, irrespective of religion, skin color or nationality, with football as the common denominator. </p>
         </div>
