@@ -5,7 +5,7 @@ import { MdAlternateEmail } from "react-icons/md";
 import { BsWhatsapp } from "react-icons/bs";
 import President from '../assets/afec-president.jpg'
 import Howard from '../assets/Howard jones.jpg'
-import Randy from '../assets/Randy moore.jpg'
+import Randy from '../assets/Randy Moore.jpg'
 import Vice from '../assets/afec-vice.jpg'
 import Developer from '../assets/Developer.jpg'
 import Fifa from '../assets/Fifa President.jpg'
@@ -16,13 +16,13 @@ const Contactus = () => {
   return (
     <>
       <div className='px-4 pt-[150px]'>
-        <div className='text-center px-5'>
+        <div className='text-center px-5 flex flex-col justify-center'>
           <h1 className='font-extrabold text-3xl'>Contact Us</h1>
           <p>Please don't hesitate to ask us your questions. Below you'll find our email addresses and phone numbers.</p>
           <p>Our Registered CAC NUMBER <span className='text-blue-400'>1979182</span></p>
         </div>
 
-        <div className='flex flex-wrap justify-between text-center md:flex-row flex-col px-8'>
+        <div className='flex flex-wrap justify-center md:justify-between text-center md:flex-row flex-col px-8'>
 
           <div className='p-4'>
             <div className="bg-sky-950 rounded-lg p-4 inline-block">
@@ -64,7 +64,7 @@ const Contactus = () => {
             </div>
           </div>
 
-          <div className='font-extrabold text-center text-2xl ml-22 mb-2 mt-5'>
+          <div className='font-extrabold text-center text-2xl text-center py-4 mb-2 mt-5'>
             <p>Management/Administration</p>
           </div>
 

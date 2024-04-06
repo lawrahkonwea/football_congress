@@ -47,11 +47,11 @@ const Homepage = () => {
   }, [inView]);
 
   const [cards] = useState([
-    { id: 1, subTitle: 'Afec Football', title: 'Lagos State FA Cup Final', image: Singleplayer, text: 'The Lagos State FA Cup Finals opened with grandeur and excitement. The event showcased the best of Lagos football culture, with teams ready to compete for victory.', date:'31st, March 2024.' },
-    { id: 2, subTitle: 'Afec Football', title: 'Refugee Football Tournament', image: Streetphoto, text: 'The refugee football tournament for peace in Monrovia to promote peace in the Country. It was accompanied with great ethusiasm and zeal for the better good. ', date:'20th, Feb 2024.' },
-    { id: 3, subTitle: 'Meet the world', title: '13th African Games Accra', image: Femaleplayer, text: ' Set against the backdrop of empowerment and athleticism, the event was a fierce competition and unforgettable moments on the field. Stay tuned as female athletes showcase their talent and passion for the beautiful game.',date:'20th, March 2024.' },
-    { id: 4, subTitle: 'Afec Football', title: 'New Football Tournament to kickoff', image: Throwplayer, text: 'The tournament schdeuled for October this year is set to commence in ikorodu and will bear the nameAyangbure of Ikorodu', date:'4th, March 2024.' },
-    { id: 5, subTitle: 'Afec Football', title: 'Football association in Conjunction with Lagos State', image: Femaleaction, text: 'The Lagos State Football Association held a seminar in conjunction with Lagos State Domestic and Sexual Violence Agency for the girl child', date:'18th, March 2024.'  },
+    { id: 1, subTitle: 'Afec Football', title: 'Lagos State FA Cup Final', image: Singleplayer, text: 'The Lagos State FA Cup Finals opened with grandeur and excitement. The event showcased the best of Lagos football culture, with teams ready to compete for victory.', date: '31st, March 2024.' },
+    { id: 2, subTitle: 'Afec Football', title: 'Refugee Football Tournament', image: Streetphoto, text: 'The refugee football tournament for peace in Monrovia to promote peace in the Country. It was accompanied with great ethusiasm and zeal for the better good. ', date: '20th, Feb 2024.' },
+    { id: 3, subTitle: 'Meet the world', title: '13th African Games Accra', image: Femaleplayer, text: ' Set against the backdrop of empowerment and athleticism, the event was a fierce competition and unforgettable moments on the field. Stay tuned as female athletes showcase their talent and passion for the beautiful game.', date: '20th, March 2024.' },
+    { id: 4, subTitle: 'Afec Football', title: 'New Football Tournament to kickoff', image: Throwplayer, text: 'The tournament schdeuled for October this year is set to commence in ikorodu and will bear the nameAyangbure of Ikorodu', date: '4th, March 2024.' },
+    { id: 5, subTitle: 'Afec Football', title: 'Football association in Conjunction with Lagos State', image: Femaleaction, text: 'The Lagos State Football Association held a seminar in conjunction with Lagos State Domestic and Sexual Violence Agency for the girl child', date: '18th, March 2024.' },
   ]);
 
   const boxRef = useRef(null);
@@ -218,8 +218,8 @@ const Homepage = () => {
           <div className='overlay'></div>
           <video className='' src={VideoBg} autoPlay loop muted />
           <div className="content absolute w-full h-full flex flex-wrap top-0 items-center flex-col justify-center">
-            <span className="text-white md:text-4xl text-2xl text-left desktop:text-[36px] font-bold"></span>
-            <span className=" text-yellow-400 md:text-6xl text-3xl text-right desktop:text-[36px] font-bold"></span>
+            <span className="px-4 text-white md:text-4xl text-2xl text-left desktop:text-[36px] font-bold"></span>
+            <span className="px-[3px] text-yellow-400 md:text-6xl text-3xl text-right desktop:text-[36px] font-bold"></span>
 
             <div className="flex items-center justify-center gap-4 mt-4">
               <a href="https://www.facebook.com/samuelonyekajohnson?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer">
@@ -257,21 +257,21 @@ const Homepage = () => {
         </div>
       </section>
       <div className="px-4 mb-6">
-        <div className="bg-gradient-to-r from-blue-80 to-blue-sky-500 flex mr-8 flex-col w-full justify-center mt-[40%] md:mt-[13%] ">
+        <div className="bg-gradient-to-r from-blue-80 to-blue-sky-500 flex mr-8 flex-col w-full justify-center mt-[40%] md:mt-[13%]">
           <div>
-            <h1 className='font-extrabold text-4xl items-start mx-8 mt-3'>Latest News</h1>
+            <h1 className='font-extrabold text-4xl md:mx-8 mt-3'>Latest News</h1>
           </div>
           <div className="flex items-center gap-2">
             <button
-              className={`px-2 py-1 mr-2 border-none ${isPrevDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+              className={`px-2 py-1 hidden md:block mr-2 border-none ${isPrevDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
               onClick={handlePrev}
               disabled={isPrevDisabled}
             >
-              <MdOutlineArrowBackIosNew className='md:hidden lg:block text-4xl text-blue-400 border-none' />
+              <MdOutlineArrowBackIosNew className='text-4xl text-blue-400 border-none' />
             </button>
-            <div className="flex swiper-wrapper ml-[-10%] md:ml-[-3%] w-full overflow-x-auto xscrollbar h-full p-6" ref={boxRef}>
+            <div className="flex swiper-wrapper w-full ml-[-3%] overflow-x-auto xscrollbar h-full md:p-6" ref={boxRef}>
               {cards.map(card => (
-                <div key={card.id} className="custom-shadow card_container bg-white m-4 w-[200px] rounded-lg ">
+                <div key={card.id} className="custom-shadow card_container bg-white m-4 w-[100%] md:w-[200px] rounded-lg ">
                   <img src={card.image} alt={card.title} className="justify-center h-[200px] w-full rounded-md" />
                   <div className="p-4">
                     <p className='text-start text-blue-400'>{card.subTitle}</p>
@@ -291,11 +291,11 @@ const Homepage = () => {
               ))}
             </div>
             <button
-              className={`px-2 py-1 border-none ${isNextDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+              className={`px-2 py-1 hidden md:block border-none ${isNextDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
               onClick={handleNext}
               disabled={isNextDisabled}
             >
-              <MdOutlineArrowForwardIos className='md:hidden lg:block text-4xl text-blue-400 ' />
+              <MdOutlineArrowForwardIos className='text-4xl text-blue-400 ' />
             </button>
           </div>
         </div>
@@ -304,26 +304,26 @@ const Homepage = () => {
             <p className="font-extrabold text-lg md:text-2xl lg:text-3xl xl:text-4xl text-center text-white">Our Vision</p>
           </div>
           <div className='text-blue-200 text-sm md:text-base lg:text-base xl:text-base'>
-            <div className="px-16 flex items-center gap-2">
-              <div className=''>
+            <div className="px-4 md:px-16 flex items-start md:items-center gap-2">
+              <div className='mt-2 md:mt-[1px]'>
                 <List />
               </div>
               <p className=" "> Our Vision is to empower individuals and team football players in Nigeria and beyond for a common goal regards to talent/skills and dreams on football to come true.</p>
             </div>
-            <div className="px-16 flex items-center gap-2 mt-5">
-              <div className=''>
+            <div className="px-4 md:px-16 my-4 flex items-start md:items-center gap-2">
+              <div className='mt-2 md:mt-[1px]'>
                 <List />
               </div>
               <p className=" "> We want to advance grassroots football players through founder metal legal perspective and legitimate means by removing them from behind the camera to playing front of the camera.</p>
             </div>
-            <div className="px-16 flex items-center gap-2 mt-5">
-              <div className=''>
+            <div className="px-4 md:px-16 flex items-start md:items-center gap-2">
+              <div className='mt-2 md:mt-[1px]'>
                 <List />
               </div>
               <p className=" "> We have alliances with coaches and big football team players in Africa and beyond on special offers for the great academy, tournament, and scouting programs.</p>
             </div>
-            <div className="px-16 flex items-center gap-2 mt-5">
-              <div className=''>
+            <div className="px-4 md:px-16 flex mt-4 items-start md:items-center gap-2">
+              <div className='mt-2 md:mt-[1px]'>
                 <List />
               </div>
               <p className=" "> We have teams on call around the clock that can take care and test the agility of a single player response to training guard. During our field training program, we can accommodate teams techniques that lead to external league standard.</p>
@@ -338,16 +338,16 @@ const Homepage = () => {
               We believe that it is important to make a tournament a lifelong memory. With moments for everyone – moments of harmony and fellowship - moments where everyone comes together.
             </h3>
           </div>
-          <div className=" main-event items-center grid grid-cols-1 md:grid-cols-2 gap-8 h-full w-full px-6 justify-center gap-6 my-8 ">
+          <div className=" main-event items-center py-2 grid grid-cols-1 md:grid-cols-2 gap-8 h-full w-full md:px-6 justify-center gap-6 my-8 ">
             {mainEvents.map((evnt, index) => (
-              <div className='w-full px-8 event_container' key={index}>
+              <div className='w-full px-2 md:px-8 event_container' key={index}>
                 <img src={evnt.img} alt="action" className="rounded-2xl w-full h-auto max-h-60 mb-8" />
-                <div className="flex items-start mt-2">
-                  <div className={`w-14 h-14 mr-4 ${evnt.id === 2 || evnt.id === 3 ? 'bg-yellow-400' : 'bg-sky-600'} rounded-lg p-4 inline-block`}>
-                    {evnt.icon}
+                <div className="mt-2">
+                  <div className={`flex items-center gap-2 mr-4 mb-2`}>
+                    <p className={`w-14 h-14 ${evnt.id === 2 || evnt.id === 3 ? 'bg-yellow-400' : 'bg-sky-600'} rounded-lg p-4 inline-block`}>{evnt.icon}</p>
+                    <p className="font-semibold mb-3">{evnt.title}</p>
                   </div>
                   <div>
-                    <p className="font-semibold mb-3">{evnt.title}</p>
                     <p className="">{evnt.text}</p>
                   </div>
                 </div>
@@ -390,8 +390,8 @@ const Homepage = () => {
           <div className='testimonials mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 h-full w-full px-6 md:px-16'>
             {testimonyEvent.map((testimony, index) => (
               <div className='custom-shadow bg-white rounded-lg px-8 py-8' key={index}>
-                <div className='flex items-start gap-4'>
-                  <img className='rounded-full w-10 h-10 md:w-12 md:h-12' src={testimony.img} alt="test-img" />
+                <div className='flex-col flex md:flex-row items-start gap-4'>
+                  <img className='rounded-full w-10 m-auto h-10 md:w-12 md:h-12' src={testimony.img} alt="test-img" />
                   <div>
                     <h3><FaRegCommentDots className='text-slate-500 text-sm' />{testimony.text}</h3>
                     <p className="font-[600] text-slate-500 mt-2">{testimony.title}</p>

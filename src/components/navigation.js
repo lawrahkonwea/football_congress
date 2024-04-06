@@ -184,9 +184,8 @@ const Navigation = () => {
                 <div className='flex items-center text-blue-950'>
                 <GiHeadShot className='text-2xl mr-2' />
                 <NavLink className='text-lg font-medium' onClick={() => setMenu(false)} to="/donate">Donate</NavLink>
-                </div>
-                
-  
+                <NavLink onClick={() => setMenu(false)} to="/register">Register</NavLink>
+
               </section>
             </div>
             <section className='flex items-center gap-4 text-3xl'>
