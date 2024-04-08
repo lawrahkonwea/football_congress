@@ -10,63 +10,63 @@ export const tournamentData = [
     desc: 'Our events areas',
     content: [
       {
-        ruleTitle: "1.COMING SOON ",
+        ruleTitle: "COMING SOON ",
         ruleDesc: "All informations will be communicated here",
       },
       {
-        ruleTitle: "2.",
+        ruleTitle: "",
         subRule1: <p><b className={style.num}>2.1</b></p>,
         subRule3: <p><b className={style.num}>2.3</b></p>,
       },
       {
-        ruleTitle: "3.",
+        ruleTitle: "",
         ruleDesc: "",
       },
       {
-        ruleTitle: "4.",
+        ruleTitle: "",
         subRule1: <p><b className={style.num}>4.1</b></p>,
       },
       {
-        ruleTitle: "5.",
+        ruleTitle: "",
         ruleDesc: "",
       },
       {
-        ruleTitle: "6.",
+        ruleTitle: "",
         subRule1: <p><b className={style.num}>6.1</b></p>,
         subRule2: <p><b className={style.num}>6.2</b></p>,
       },
       {
-        ruleTitle: "7.",
+        ruleTitle: "",
         ruleDesc: "",
       },
       {
-        ruleTitle: "8.",
+        ruleTitle: "",
         ruleDesc: "",
       },
       {
-        ruleTitle: "9.",
+        ruleTitle: "",
         ruleDesc: "",
         subRule1: <p><b className={style.num}>9.1</b></p>,
       },
       {
-        ruleTitle: "10.",
+        ruleTitle: "",
         ruleDesc: "",
       },
       {
-        ruleTitle: "11.",
+        ruleTitle: "",
         ruleDesc: "",
       },
       {
-        ruleTitle: "12.",
+        ruleTitle: "",
         ruleDesc: "",
       },
       {
-        ruleTitle: "13.",
+        ruleTitle: "",
         subRule1: <p><b className={style.num}>13.1</b></p>,
         subRule2: <p><b className={style.num}>13.2</b></p>,
       },
       {
-        ruleTitle: "14.",
+        ruleTitle: "",
         ruleDesc: "",
         subRule1: <p><b className={style.num}>14.1</b></p>,
       },
@@ -78,64 +78,64 @@ export const tournamentData = [
     desc: 'An evening to remember',
     content: [
       {
-        ruleTitle: "1. COMING SOON",
+        ruleTitle: "COMING SOON",
         ruleDesc: "All informations will be gotten here",
       },
       {
-        ruleTitle: "2. ",
+        ruleTitle: "",
         subRule1: <p><b className={style.num}>2.1</b> </p>,
         subRule2: <p><b className={style.num}>2.2</b></p>,
         subRule3: <p><b className={style.num}>2.3</b> </p>,
       },
       {
-        ruleTitle: "3.",
+        ruleTitle: "",
         ruleDesc: "",
       },
       {
-        ruleTitle: "4. ",
+        ruleTitle: "",
         subRule1: <p><b className={style.num}>4.1</b></p>,
       },
       {
-        ruleTitle: "5.",
+        ruleTitle: "",
         ruleDesc: "",
       },
       {
-        ruleTitle: "6.",
+        ruleTitle: "",
         subRule1: <p><b className={style.num}>6.1</b></p>,
         subRule2: <p><b className={style.num}>6.2</b></p>,
       },
       {
-        ruleTitle: "7.",
+        ruleTitle: "",
         ruleDesc: "",
       },
       {
-        ruleTitle: "8.",
+        ruleTitle: "",
         ruleDesc: "",
       },
       {
-        ruleTitle: "9.",
+        ruleTitle: "",
         ruleDesc: "",
         subRule1: <p><b className={style.num}>9.1</b></p>,
       },
       {
-        ruleTitle: "10. ",
+        ruleTitle: "",
         ruleDesc: "",
       },
       {
-        ruleTitle: "11. ",
+        ruleTitle: "",
         ruleDesc: "",
       },
       {
-        ruleTitle: "12.",
+        ruleTitle: "",
         ruleDesc: "",
       },
       {
-        ruleTitle: "13.",
+        ruleTitle: "",
         subRule1: <p><b className={style.num}>13.1</b></p>,
         subRule2: <p><b className={style.num}>13.2</b></p>,
       },
       {
-        ruleTitle: "14.",
+        ruleTitle: "",
         ruleDesc: ""
       },
     ],

@@ -5,7 +5,7 @@ import { MdAlternateEmail } from "react-icons/md";
 import { BsWhatsapp } from "react-icons/bs";
 import President from '../assets/afec-president.jpg'
 import Howard from '../assets/Howard jones.jpg'
-import Randy from '../assets/Randy moore.jpg'
+import Randy from '../assets/Randy_moore.jpg';
 import Vice from '../assets/afec-vice.jpg'
 import Developer from '../assets/Developer.jpg'
 

@@ -135,7 +135,7 @@ const Navigation = () => {
 
             {/* sidebar mobile menu */}
             <div className={clsx(
-              'fixed h-screen w-screen md:hidden top-0 right-0 -translate-x-full transition-all', sideMenuOpen && 'translate-x-0'
+              'fixed h-screen w-screen lg:hidden top-0 right-0 -translate-x-full transition-all', sideMenuOpen && 'translate-x-0'
             )}
             >
               <section className='overflow-y-auto  bg-white rounded-lg flex-col absolute left-4 top-4 h-5/6 w-11/12 p-8 gap-8 z-50 flex '>

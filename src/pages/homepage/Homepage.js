@@ -246,15 +246,17 @@ const Homepage = () => {
             {helpOpt.map((opt, index) => (
               <div className="px-4 py-4 flex justify-center flex-col" key={index}>
                 <p className="m-auto pb-[2px]">{opt.icon}</p>
-                {index === registerIndex ? (
-                  <Link to='/register' className="text-[#fff]">{opt.title}</Link>
-                ) : index === accountIndex ? (
-                  <Link to='/donate' className="text-[#fff]">{opt.title}</Link>
-                ) : index === contactIndex ? (
-                  <Link to='/contacts' className="text-[#fff]">{opt.title}</Link>
-                ) : (
-                  <span className="text-[#fff]">{opt.title}</span>
-                )}
+                <div className="z-20">
+                  {index === registerIndex ? (
+                    <Link to='/register' className="text-[#fff]">{opt.title}</Link>
+                  ) : index === accountIndex ? (
+                    <Link to='/donate' className="text-[#fff]">{opt.title}</Link>
+                  ) : index === contactIndex ? (
+                    <Link to='/contacts' className="text-[#fff]">{opt.title}</Link>
+                  ) : (
+                    <span className="text-[#fff]">{opt.title}</span>
+                  )}
+                </div>
 
               </div>
             ))}
