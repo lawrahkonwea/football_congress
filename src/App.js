@@ -10,6 +10,7 @@ import TournamentDetail from './components/navComponents/tournamentDetail/Tourna
 import Footer from './components/footer';
 import About from './pages/About';
 import Contactus from './pages/contactus';
+import Slider from './pages/sliders'
 import Registration from './pages/registration/Registration';
 
 export default function App() {
@@ -36,6 +37,7 @@ export default function App() {
         </Routes>
       </AnimatePresence>
       <div>
+        <Slider />
         <Footer />
       </div>
     </div>

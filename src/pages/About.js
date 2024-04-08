@@ -45,7 +45,6 @@ const About = () => {
               <img
                 src={Light}
                 alt="light"
-                // className="App-logo w-[50%] md:w-[70%] mt-[-350px] md:ml-[-10px] mix-blend-hard-light "
                 className="App-logo  w-[60%] md:w-[70%] mt-4 w-full"
               />
             </div>
@@ -58,7 +57,7 @@ const About = () => {
           <p className='px-4 md:w-[60%] m-auto mb-8'>It’s the teams, and participants from around the world that make the tournament unique. A meeting place for the world’s youth, irrespective of religion, skin color or nationality, with football as the common denominator. </p>
         </div>
 
-        <div className='flex justify-center flex-wrap'>
+        <div className='flex justify-center gap-8 items-center flex-wrap'>
           {aboutData.map((data, index) => (
             <div className='md:w-[40%] ' key={index}>
               <div className='flex items-start gap-2'>

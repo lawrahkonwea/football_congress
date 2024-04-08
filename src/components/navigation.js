@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import Participant from './navComponents/Participant';
-import { FaExclamationCircle } from "react-icons/fa";
 import { GiLaurelsTrophy } from "react-icons/gi";
 import { tournamentData } from './navComponents/data/tournamentData';
 import { participantsData } from './navComponents/data/participantsData';
 import Tournament from './navComponents/Tournament';
 import { GiHeadShot } from "react-icons/gi";
-// import About from './navComponents/About'
 import { FiMenu } from 'react-icons/fi';
 import { BiLogoDribbble } from 'react-icons/bi';
 import { RiCloseLine } from 'react-icons/ri';
@@ -50,7 +48,7 @@ const Navigation = () => {
       label: "Account",
       link: "/donate"
     }
-    
+
   ];
 
 
@@ -90,7 +88,7 @@ const Navigation = () => {
       {/* top section before nav */}
       <main className=''>
         <section className="fixed w-full z-50 navbar">
-          <div className='flex justify-between items-center text-center bg bg-yellow-400 w-full  py-2 px-12 text-white font-sans'>
+          <div className='flex justify-between items-center text-center bg bg-orange-400 w-full  py-2 px-12 text-white font-sans'>
             <div className='hidden lg:flex text-3xl '> <FcGlobe /></div>
             <div className='flex items-center text-center justify-between '>
               <h3 className=''>AFEC Football 2024 now fully Open!</h3>
@@ -103,7 +101,9 @@ const Navigation = () => {
             <div className="flex items-center gap-8">
               <section className='flex items-center gap-4 '>
                 {/* logo */}
-                <FiMenu onClick={() => setMenu(true)} className='text-white  text-3xl cursor-pointer lg:hidden' />
+                <button onClick={() => setMenu(true)} className='text-white  text-3xl cursor-pointer lg:hidden'>
+                  <FiMenu />
+                </button>
                 <NavLink to="/" className='text-4xl font-mono '>
                   <img className='w-10 my-1' src={logo} alt='ball' />
                 </NavLink>
@@ -143,48 +143,51 @@ const Navigation = () => {
                   <RiCloseLine onClick={() => setMenu(false)} className='mt-2 text-3xl cursor-pointer' />
                   <img className='w-12' src={logo} alt='ball' /></div>
 
-                
+
                 <div className='text-blue-950'>
                   <button onClick={() => handleParticipationSideModal()}>
-                  <div  className='flex items-center'>
-                  <GiHeadShot className='text-2xl mr-2' />
-                  <span className='text-lg font-medium'>Your Participation</span>
-                  <RiArrowDropDownLine  className='cursor pointer ml-[16px] text-4xl' />
-                  </div>
-                {sideMenu.map((evnt, index) => (
-                  <Link to={`/tournament_details/${evnt.id}`} onClick={() => setMenu(false)} className='' key={index}>
-                    {showParticipationSide ? ( 
-                      <p className='flex items-center gap-3'><GiLaurelsTrophy className='text-2xl mt-1 mr-4' />{evnt.title}</p>
-                    ) : '' } 
-                  </Link>
-                ))}
-                </button>
+                    <div className='flex items-center'>
+                      <GiHeadShot className='text-2xl mr-2' />
+                      <span className='text-lg font-medium'>Your Participation</span>
+                      <RiArrowDropDownLine className='cursor pointer ml-[16px] text-4xl' />
+                    </div>
+                    {sideMenu.map((evnt, index) => (
+                      <Link to={`/tournament_details/${evnt.id}`} onClick={() => setMenu(false)} className='' key={index}>
+                        {showParticipationSide ? (
+                          <p className='flex items-center gap-3'><GiLaurelsTrophy className='text-2xl mt-1 mr-4' />{evnt.title}</p>
+                        ) : ''}
+                      </Link>
+                    ))}
+                  </button>
                 </div>
 
                 <div className='text-blue-950'>
                   <button onClick={() => handleTournamentSideModal()}>
-                  <div  className='flex items-center'>
+                    <div className='flex items-center'>
+                      <GiHeadShot className='text-2xl mr-2' />
+                      <span className='text-lg font-medium'>Tournament</span>
+                      <RiArrowDropDownLine className='cursor pointer text-4xl' />
+                    </div>
+                    {sideTournament.map((evnt, index) => (
+                      <Link to={`/centers_details/${evnt.id}`} onClick={() => setMenu(false)} className='' key={index}>
+                        {showTournamentSide ? (
+                          <p className='flex items-center gap-3'><GiLaurelsTrophy className='text-2xl mt-1 mr-4' />{evnt.title}</p>
+                        ) : ''}
+                      </Link>
+                    ))}
+                  </button>
+                </div>
+                <div className='flex items-center text-blue-950'>
                   <GiHeadShot className='text-2xl mr-2' />
-                  <span className='text-lg font-medium'>Tournament</span>
-                  <RiArrowDropDownLine  className='cursor pointer text-4xl' />
-                  </div>
-                {sideTournament.map((evnt, index) => (
-                  <Link to={`/centers_details/${evnt.id}`} onClick={() => setMenu(false)} className='' key={index}>
-                    {showTournamentSide ? ( 
-                      <p className='flex items-center gap-3'><GiLaurelsTrophy className='text-2xl mt-1 mr-4' />{evnt.title}</p>
-                    ) : '' } 
-                  </Link>
-                ))}
-                </button>
+                  <NavLink className='text-lg font-medium' onClick={() => setMenu(false)} to="/aboutus">About</NavLink>
                 </div>
                 <div className='flex items-center text-blue-950'>
-                <GiHeadShot className='text-2xl mr-2' />
-                <NavLink className='text-lg font-medium' onClick={() => setMenu(false)} to="/aboutus">About</NavLink>
+                  <GiHeadShot className='text-2xl mr-2' />
+                  <NavLink className='text-lg font-medium' onClick={() => setMenu(false)} to="/donate">Account</NavLink>
                 </div>
                 <div className='flex items-center text-blue-950'>
-                <GiHeadShot className='text-2xl mr-2' />
-                <NavLink className='text-lg font-medium' onClick={() => setMenu(false)} to="/donate">Donate</NavLink>
-                <NavLink onClick={() => setMenu(false)} to="/register">Register</NavLink>
+                  <NavLink className="text-lg font-medium" onClick={() => setMenu(false)} to="/register">Register</NavLink>
+                </div>
 
               </section>
             </div>

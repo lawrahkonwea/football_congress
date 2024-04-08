@@ -13,6 +13,7 @@ import Capman from "../../assets/yoruba testimonial.jpg"
 import Young from "../../assets/young testimonial.jpeg"
 import { FaStarOfDavid } from "react-icons/fa";
 import { GiLaurelsTrophy } from "react-icons/gi";
+import { MdOutlinePhonelinkRing } from "react-icons/md";
 import { GiHeadShot } from "react-icons/gi";
 import { BiLogoDribbble } from 'react-icons/bi';
 import Tournament from '../../assets/tornament.jpg';
@@ -145,11 +146,12 @@ const Homepage = () => {
     },
     {
       title: <>Contact us</>,
-      icon: <BiLogoDribbble className='text-white' />,
+      icon: <MdOutlinePhonelinkRing className='text-white' />,
     },
   ]
 
   const registerIndex = 0;
+  const accountIndex = 1;
   const contactIndex = 2;
 
 
@@ -184,7 +186,7 @@ const Homepage = () => {
   // span on hero section
   useEffect(() => {
     const options = {
-      strings: ['African Football'],
+      strings: ['The AFEC'],
       typeSpeed: 50,
       backSpeed: 50,
       cursorChar: '',
@@ -194,7 +196,7 @@ const Homepage = () => {
 
     const optionsRight = {
       ...options,
-      strings: ['Empowerment Congress'],
+      strings: ['Football'],
     };
 
     const typedRight = new Typed('.text-right', optionsRight);
@@ -217,22 +219,23 @@ const Homepage = () => {
         <div className="w-full video">
           <div className='overlay'></div>
           <video className='' src={VideoBg} autoPlay loop muted />
-          <div className="content absolute w-full h-full flex flex-wrap top-0 items-center flex-col justify-center">
-            <span className="px-4 text-white md:text-4xl text-2xl text-left desktop:text-[36px] font-bold"></span>
-            <span className="px-[3px] text-yellow-400 md:text-6xl text-3xl text-right desktop:text-[36px] font-bold"></span>
+          <div className="content absolute w-full h-full flex flex-wrap top-0 items-center flex-col justify-center mt-32">
+            <p className='text-white mb-3 italic'>Aftermatch 2024 / Tournaments</p>
+            <span className="px-4 text-white md:text-7xl text-3xl text-left lg:text-[72px] font-bold "></span>
+            <span className="px-[3px] text-orange-400 md:text-9xl text-4xl text-right lg:text-[72px] font-bold"></span>
 
             <div className="flex items-center justify-center gap-4 mt-4">
               <a href="https://www.facebook.com/samuelonyekajohnson?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer">
-                <FaFacebook className='w-9 h-9 text-slate-400' />
+                <FaFacebook className='w-9 h-9  text-slate-400' />
               </a>
               <a href="https://www.instagram.com/africa__footballec" target="_blank" rel="noopener noreferrer">
-                <FaInstagram className='w-9 h-9 text-slate-400' />
+                <FaInstagram className='w-9 h-9  text-slate-400' />
               </a>
               <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-                <AiOutlineYoutube className='w-9 h-9 text-slate-400' />
+                <AiOutlineYoutube className='w-9 h-9  text-slate-400' />
               </a>
               <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
-                <FaWhatsapp className='w-9 h-9 text-slate-400' />
+                <FaWhatsapp className='w-9 h-9  text-slate-400' />
               </a>
             </div>
           </div>
@@ -241,10 +244,12 @@ const Homepage = () => {
           </div>
           <div className="bg-sky-700 flex justify-around items-center gap-4">
             {helpOpt.map((opt, index) => (
-              <div className="px-4 py-4 flex justify-center flex-col">
+              <div className="px-4 py-4 flex justify-center flex-col" key={index}>
                 <p className="m-auto pb-[2px]">{opt.icon}</p>
                 {index === registerIndex ? (
                   <Link to='/register' className="text-[#fff]">{opt.title}</Link>
+                ) : index === accountIndex ? (
+                  <Link to='/donate' className="text-[#fff]">{opt.title}</Link>
                 ) : index === contactIndex ? (
                   <Link to='/contacts' className="text-[#fff]">{opt.title}</Link>
                 ) : (
@@ -256,6 +261,8 @@ const Homepage = () => {
           </div>
         </div>
       </section>
+
+
       <div className="px-4 mb-6">
         <div className="bg-gradient-to-r from-blue-80 to-blue-sky-500 flex mr-8 flex-col w-full justify-center mt-[40%] md:mt-[13%]">
           <div>
@@ -271,9 +278,16 @@ const Homepage = () => {
             </button>
             <div className="flex swiper-wrapper w-full ml-[-3%] overflow-x-auto xscrollbar h-full md:p-6" ref={boxRef}>
               {cards.map(card => (
-                <div key={card.id} className="custom-shadow card_container bg-white m-4 w-[100%] md:w-[200px] rounded-lg ">
-                  <img src={card.image} alt={card.title} className="justify-center h-[200px] w-full rounded-md" />
-                  <div className="p-4">
+                <div key={card.id} className="custom-shadow card_container bg-white m-4 w-[100%] md:w-[200px] rounded-lg relative">
+                  <div className="image-container h-[200px] overflow-hidden rounded-t-md">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="w-full h-auto"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                  <div className="p-4 mt-4">
                     <p className='text-start text-blue-400'>{card.subTitle}</p>
                     <p className="text-start mt-2 text-xl font-semibold">{card.title}</p>
                     <p className="text-start mt-2 text-slate-500">{card.text}</p>
@@ -344,7 +358,7 @@ const Homepage = () => {
                 <img src={evnt.img} alt="action" className="rounded-2xl w-full h-auto max-h-60 mb-8" />
                 <div className="mt-2">
                   <div className={`flex items-center gap-2 mr-4 mb-2`}>
-                    <p className={`w-14 h-14 ${evnt.id === 2 || evnt.id === 3 ? 'bg-yellow-400' : 'bg-sky-600'} rounded-lg p-4 inline-block`}>{evnt.icon}</p>
+                    <p className={`md:w-14 md:h-14 ${evnt.id === 2 || evnt.id === 3 ? 'bg-orange-400' : 'bg-sky-600'} rounded-lg p-4 inline-block`}>{evnt.icon}</p>
                     <p className="font-semibold mb-3">{evnt.title}</p>
                   </div>
                   <div>
@@ -358,22 +372,22 @@ const Homepage = () => {
         <section className=''>
           <div className=''>
             <div className='text-center'>
-              <h1 className='font-bold text-5xl my-4 mt-44'>Afec 2024</h1>
+              <h1 className='font-bold text-4xl md:text-5xl my-4 mt-44'>Afec 2024</h1>
               <p className='text-slate-500 px-8 mb-8'>In 2024 the Afec Tournament will be held. Over 200 goals have been scored and matches were played on over 50 pitches.</p>
             </div>
 
             <div className='md:flex flex-col items-center justify-center ' ref={ref}>
               <div className='text-center md:flex-row flex flex-col gap-4 md:gap-1'>
                 <div className='bg-white custom-shadow py-6 px-24 rounded-md'>
-                  <h1 className={`font-bold text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>50</h1>
+                  <h1 className={`font-bold text-5xl md:text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>50</h1>
                   <p className='text-slate-500'>Teams</p>
                 </div>
                 <div className='bg-white custom-shadow py-6 px-24 rounded-md'>
-                  <h1 className={`font-bold text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>30</h1>
+                  <h1 className={`font-bold text-5xl md:text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>30</h1>
                   <p className='text-slate-500'>Countries</p>
                 </div>
                 <div className='bg-white custom-shadow py-6 px-24 rounded-md'>
-                  <h1 className={`font-bold text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>200</h1>
+                  <h1 className={`font-bold text-5xl md:text-6xl text-sky-800 animate__animated ${scrollY ? 'animate__slideInUp' : ''}`}>200</h1>
                   <p className='text-slate-500'>Matches</p>
                 </div>
               </div>
@@ -384,7 +398,7 @@ const Homepage = () => {
 
         <section className='bg-gradient-to-r from-blue-50 to-blue-sky-400'>
           <div className='text-center px-12 mt-44'>
-            <h1 className='text-2xl text-sky-400'>Testimonials</h1>
+            <h1 className='text-2xl text-sky-400 mb-3-4'>Testimonials</h1>
             <h1 className='mt-3 text-2xl font-semibold'>We have worked with thousands of amazing people around the world</h1>
           </div>
           <div className='testimonials mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 h-full w-full px-6 md:px-16'>
