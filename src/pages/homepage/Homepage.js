@@ -20,7 +20,7 @@ import Tournament from '../../assets/tornament.jpg';
 import Screening from '../../assets/screening-football.jpg'
 import Femaletournament from "../../assets/female-tornament.jpg";
 import Disabled from "../../assets/disabled.jpg";
-import Testimonial from "../../assets/testimonial-female.jpg"
+import Testimonial from "../../assets/hijabi.jpg"
 import President from "../../assets/afec-president.jpg"
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
