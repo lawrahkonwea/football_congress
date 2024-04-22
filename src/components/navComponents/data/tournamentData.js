@@ -1,8 +1,8 @@
-import React from 'react'
+// import React from 'react'
 
-const style = {
-  num: "block my-2"
-}
+// const style = {
+//   num: "block my-2"
+// }
 
 export const tournamentData = [
   {
@@ -13,130 +13,152 @@ export const tournamentData = [
         ruleTitle: "COMING SOON ",
         ruleDesc: "All informations will be communicated here",
       },
-      {
-        ruleTitle: "",
-        subRule1: <p><b className={style.num}>2.1</b></p>,
-        subRule3: <p><b className={style.num}>2.3</b></p>,
-      },
-      {
-        ruleTitle: "",
-        ruleDesc: "",
-      },
-      {
-        ruleTitle: "",
-        subRule1: <p><b className={style.num}>4.1</b></p>,
-      },
-      {
-        ruleTitle: "",
-        ruleDesc: "",
-      },
-      {
-        ruleTitle: "",
-        subRule1: <p><b className={style.num}>6.1</b></p>,
-        subRule2: <p><b className={style.num}>6.2</b></p>,
-      },
-      {
-        ruleTitle: "",
-        ruleDesc: "",
-      },
-      {
-        ruleTitle: "",
-        ruleDesc: "",
-      },
-      {
-        ruleTitle: "",
-        ruleDesc: "",
-        subRule1: <p><b className={style.num}>9.1</b></p>,
-      },
-      {
-        ruleTitle: "",
-        ruleDesc: "",
-      },
-      {
-        ruleTitle: "",
-        ruleDesc: "",
-      },
-      {
-        ruleTitle: "",
-        ruleDesc: "",
-      },
-      {
-        ruleTitle: "",
-        subRule1: <p><b className={style.num}>13.1</b></p>,
-        subRule2: <p><b className={style.num}>13.2</b></p>,
-      },
-      {
-        ruleTitle: "",
-        ruleDesc: "",
-        subRule1: <p><b className={style.num}>14.1</b></p>,
-      },
+      // {
+      //   ruleTitle: "",
+      //   subRule1: <p><b className={style.num}>2.1</b></p>,
+      //   subRule3: <p><b className={style.num}>2.3</b></p>,
+      // },
+      // {
+      //   ruleTitle: "",
+      //   ruleDesc: "",
+      // },
+      // {
+      //   ruleTitle: "",
+      //   subRule1: <p><b className={style.num}>4.1</b></p>,
+      // },
+      // {
+      //   ruleTitle: "",
+      //   ruleDesc: "",
+      // },
+      // {
+      //   ruleTitle: "",
+      //   subRule1: <p><b className={style.num}>6.1</b></p>,
+      //   subRule2: <p><b className={style.num}>6.2</b></p>,
+      // },
+      // {
+      //   ruleTitle: "",
+      //   ruleDesc: "",
+      // },
+      // {
+      //   ruleTitle: "",
+      //   ruleDesc: "",
+      // },
+      // {
+      //   ruleTitle: "",
+      //   ruleDesc: "",
+      //   subRule1: <p><b className={style.num}>9.1</b></p>,
+      // },
+      // {
+      //   ruleTitle: "",
+      //   ruleDesc: "",
+      // },
+      // {
+      //   ruleTitle: "",
+      //   ruleDesc: "",
+      // },
+      // {
+      //   ruleTitle: "",
+      //   ruleDesc: "",
+      // },
+      // {
+      //   ruleTitle: "",
+      //   subRule1: <p><b className={style.num}>13.1</b></p>,
+      //   subRule2: <p><b className={style.num}>13.2</b></p>,
+      // },
+      // {
+      //   ruleTitle: "",
+      //   ruleDesc: "",
+      //   subRule1: <p><b className={style.num}>14.1</b></p>,
+      // },
     ],
     id: "centers_1_abcd",
   },
   {
-    title: 'Opening Ceremonies',
-    desc: 'An evening to remember',
+    title: 'Participating Schools',
+    desc: 'Tournament participants',
     content: [
       {
-        ruleTitle: "COMING SOON",
-        ruleDesc: "All informations will be gotten here",
+        ruleTitle: " U-17 boy's football tournament.",
+        subRule: "The List of International School (AISEN). That's expected to participate in this year's 2024, Africa Football Empowerment Congress (AFEC).",
+        ruleDesc: "James Hope college.",
       },
       {
-        ruleTitle: "",
-        subRule1: <p><b className={style.num}>2.1</b> </p>,
-        subRule2: <p><b className={style.num}>2.2</b></p>,
-        subRule3: <p><b className={style.num}>2.3</b> </p>,
+        ruleDesc: "Grange School",
       },
       {
-        ruleTitle: "",
-        ruleDesc: "",
+       ruleDesc: "Avi-Cenna international school"
       },
       {
-        ruleTitle: "",
-        subRule1: <p><b className={style.num}>4.1</b></p>,
+        ruleDesc: "Lagos Preparatory school",
       },
       {
-        ruleTitle: "",
-        ruleDesc: "",
+        ruleDesc: " British international school",
       },
       {
-        ruleTitle: "",
-        subRule1: <p><b className={style.num}>6.1</b></p>,
-        subRule2: <p><b className={style.num}>6.2</b></p>,
+        ruleDesc: "Green springs school",
       },
       {
-        ruleTitle: "",
-        ruleDesc: "",
+        ruleDesc: "Temple school",
       },
       {
-        ruleTitle: "",
-        ruleDesc: "",
+        ruleDesc: "Lekki British school",
       },
       {
-        ruleTitle: "",
-        ruleDesc: "",
-        subRule1: <p><b className={style.num}>9.1</b></p>,
+        ruleDesc: "ChrisLand school",
       },
       {
-        ruleTitle: "",
-        ruleDesc: "",
+        ruleDesc: "Caleb British international school",
       },
       {
-        ruleTitle: "",
-        ruleDesc: "",
+        ruleDesc: "Queensland College"
       },
       {
-        ruleTitle: "",
-        ruleDesc: "",
+        ruleDesc: "Corona school"
       },
       {
-        ruleTitle: "",
-        subRule1: <p><b className={style.num}>13.1</b></p>,
-        subRule2: <p><b className={style.num}>13.2</b></p>,
+        ruleDesc: "Down College"
       },
       {
-        ruleTitle: "",
-        ruleDesc: ""
+        ruleDesc: "Atlantic Hall"
+      },
+      {
+        ruleDesc: "Meadow Hall"
+      },
+      {
+        ruleDesc: "Children international school"
+      },
+      {
+        ruleDesc: "Greenville school"
+      },
+      {
+        ruleDesc: "American international school"
+      },
+      {
+        ruleDesc: "St. Saviour school"
+      },
+      {
+        ruleDesc: "Charterhouse Lagos"
+      },
+      {
+        ruleDesc: "River bank"
+      },
+      {
+        ruleDesc: "Rainbow college"
+      },
+      {
+        ruleDesc: "Emerald school"
+      },
+      {
+        ruleDesc: "New Hall international school"
+      },
+      {
+        ruleDesc: "Redeemers international secondary school"
+      },
+      {
+        ruleDesc: "Day waterman"
+      },
+      {
+        ruleDesc: "Lagoon school"
       },
     ],
     id: "centers_1_abcghy",

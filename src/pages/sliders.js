@@ -1,13 +1,19 @@
 import React from 'react'
 import Marquee from "react-fast-marquee";
-import Sliderone from '../assets/Slider.jpg'
-import Slidertwo from '../assets/slider 2.jpg'
-import Sliderthree from '../assets/slider 3.jpg'
-import Sliderfour from '../assets/slider 4.jpg'
-import Sliderfive from '../assets/slider 5.jpg'
-import Slidersix from '../assets/slider 6.jpg'
-import Sliderseven from '../assets/slider 7.jpg'
-import Slidereight from '../assets/slider 8.jpg'
+import Sliderone from '../assets/BALL 1.jpg'
+import Slidertwo from '../assets/BALL 2.jpg'
+import Sliderthree from '../assets/BALL 3.jpg'
+import Sliderfour from '../assets/BALL 4.jpg'
+import Sliderfive from '../assets/BALL 5.jpg'
+import Slidersix from '../assets/BALL 6.jpg'
+import Sliderseven from '../assets/BALL 7.jpg'
+import Slidereight from '../assets/BALL 8.jpg'
+import Slidernine from '../assets/BALL 9.jpg'
+import Sliderten from '../assets/BALL 10.jpg'
+import Slidereleven from '../assets/BALL 11.jpg'
+
+
+
 
 
 
@@ -36,21 +42,34 @@ const sliders = () => {
     },
     {
       img: Slidersix,
-      id: 6
+      id: 6,
     },
     {
       img: Sliderseven,
-      id: 7
+      id: 7,
     },
     {
       img: Slidereight,
-      id: 8
+      id: 8,
+    },
+    {
+      img: Slidernine,
+      id: 9,
+    },
+    {
+      img: Sliderten,
+      id: 10,
+    },
+    {
+      img: Slidereleven,
+      id: 11
     }
+    
   ]
 
 
   return (
-    <div className='mt-20'>
+    <div className='mt-20 mb-8'>
       <div className='text-center my-16'>
       <p className='font-bold text-4xl md:text-5xl mb-2'>Moments</p>
       <p className='text-slate-500 px-5'>These are the moments we cherish and we'd love to relive again</p>

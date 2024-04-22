@@ -91,8 +91,8 @@ export const participantsData = [
     desc: "What does it cost",
     content: [
       {
-        ruleTitle: "The Cost and Fee is relative and not fixed",
-        ruleDesc: "Discussions are open as the fee will be communicated upon discussions",
+        ruleTitle: "The Cost and Fee.",
+        ruleDesc: "NAPPS Tournament Registration fee per School team is N300,000 (Three hundred thousand naira only)",
         subRule1: "Kindly go to our Accounts page to make payments once decisions have been made. Thank you"
       }
     ],

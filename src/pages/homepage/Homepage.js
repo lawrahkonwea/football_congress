@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
+import { tournamentData } from '../../components/navComponents/data/tournamentData';
 import { useLocation, Link } from 'react-router-dom';
 import { ReactComponent as List } from '../../assets/svg/list terms.svg';
 import VideoBg from "../../assets/football-video.mp4";
@@ -28,13 +29,16 @@ import { AiOutlineYoutube } from "react-icons/ai";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
-import { Typed } from 'react-typed'
+import { Typed } from 'react-typed';
 import { FaRegCommentDots } from "react-icons/fa6";
 import logo from "../../assets/AFEC LOGO 3.png";
+import Student from "../../assets/school pix.jpg"
 
 import "./index.css";
 
 const Homepage = () => {
+
+  const schools = tournamentData;
 
   const [ref, inView] = useInView({
     triggerOnce: false,
@@ -185,17 +189,17 @@ const Homepage = () => {
 
   // span on hero section
   useEffect(() => {
-    const options = {
+    const optionsLeft = {
       strings: ['The AFEC'],
       typeSpeed: 50,
       backSpeed: 50,
       cursorChar: '',
     };
 
-    const typedLeft = new Typed('.text-left', options);
+    const typedLeft = new Typed('.text-left', optionsLeft);
 
     const optionsRight = {
-      ...options,
+      ...optionsLeft,
       strings: ['Football'],
     };
 
@@ -206,6 +210,7 @@ const Homepage = () => {
       typedRight.destroy();
     };
   }, []);
+
 
   return (
     <motion.div
@@ -221,7 +226,7 @@ const Homepage = () => {
           <video className='' src={VideoBg} autoPlay loop muted />
           <div className="content absolute w-full h-full flex flex-wrap top-0 items-center flex-col justify-center mt-32">
             <p className='text-white mb-3 italic'>Aftermatch 2024 / Tournaments</p>
-            <span className="px-4 text-white md:text-7xl text-3xl text-left lg:text-[72px] font-bold "></span>
+            <span className="px-4 text-white md:text-7xl text-3xl text-left lg:text-[72px] font-bold"></span>
             <span className="px-[3px] text-orange-400 md:text-9xl text-4xl text-right lg:text-[72px] font-bold"></span>
 
             <div className="flex items-center justify-center gap-4 mt-4">
@@ -315,11 +320,12 @@ const Homepage = () => {
             </button>
           </div>
         </div>
-        <section className={`${scrollY ? 'animate__slideInUp' : ''} animate__animated flex-1 mx-auto bg-sky-950 my-8 md:my-16 py-8 md:py-16 rounded-2xl max-w-6xl`} ref={ref}>
+        <section className="flex-1 mx-auto bg-sky-950 my-8 md:my-16 py-8 md:py-16 rounded-2xl max-w-6xl" >
+
           <div className="my-2 md:my-4">
             <p className="font-extrabold text-lg md:text-2xl lg:text-3xl xl:text-4xl text-center text-white">Our Vision</p>
           </div>
-          <div className='text-blue-200 text-sm md:text-base lg:text-base xl:text-base'>
+          <div className="text-blue-200 text-sm md:text-base lg:text-base xl:text-base animate__animated animate__slideInRight animate__slower">
             <div className="px-4 md:px-16 flex items-start md:items-center gap-2">
               <div className='mt-2 md:mt-[1px]'>
                 <List />
@@ -345,6 +351,7 @@ const Homepage = () => {
               <p className=" "> We have teams on call around the clock that can take care and test the agility of a single player response to training guard. During our field training program, we can accommodate teams techniques that lead to external league standard.</p>
             </div>
           </div>
+
         </section>
         <section>
           <div className="text-center">
@@ -371,6 +378,25 @@ const Homepage = () => {
             ))}
           </div>
         </section>
+
+        <section>
+          <div className='px-4'>
+            <div className='text-center items-start'>
+              <div className=''>
+              <h1 className='animate__animated animate__bounce animate__slower animate__infinite font-bold text-4xl md:text-4xl my-4 mt-16'>AFEC Participants, 2024</h1>
+              <img className='mt-4 custom-shadow inline-block w-full h-auto md:h-auto md:w-[800px] rounded-lg mb-2 object-cover object-center' src={Student} alt='student' />
+              <p className='mt-5 text-md md:text-lg mx-4 sm:mx-12 md:mx-20 md:px-12 lg:px-40 mx-36'>The List of International School (AISEN). These schools are expected to participate in this year's 2024 Africa Football Empowerment Congress (AFEC) U-17 boy's football tournament.</p>
+              </div>
+             
+              <div className='items-start'>
+                {schools.map((evnt, index) => (
+                  <Link to={`/centers_details/centers_1_abcghy`} className=' text-blue-500' key={index}>READ MORE</Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className=''>
           <div className=''>
             <div className='text-center'>
@@ -403,7 +429,7 @@ const Homepage = () => {
             <h1 className='text-2xl text-sky-400 mb-3-4'>Testimonials</h1>
             <h1 className='mt-3 text-2xl font-semibold'>We have worked with thousands of amazing people around the world</h1>
           </div>
-          <div className='testimonials mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 h-full w-full px-6 md:px-16'>
+          <div className='testimonials mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 h-full w-full px-6 md:px-16 '>
             {testimonyEvent.map((testimony, index) => (
               <div className='custom-shadow bg-white rounded-lg px-8 py-8' key={index}>
                 <div className='flex-col flex md:flex-row items-start gap-4'>

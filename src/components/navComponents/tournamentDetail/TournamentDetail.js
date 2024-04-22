@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { tournamentData } from '../data/tournamentData';
+import { FaCheckDouble } from "react-icons/fa";
 
 const TournamentDetail = () => {
   const centersDetails = tournamentData;
@@ -10,7 +11,7 @@ const TournamentDetail = () => {
 
   return (
     <div className="pt-[140px]">
-      <nav className="flex justify-between items-center gap-2 px-4 mb-4">
+      <nav className="flex justify-between items-center gap-2 px-4 mb-4 text-blue-950">
         <p className="text-[20px] font-[500] text-[#000]">{centersDetail[0].title}</p>
         <div className="flex gap-4 items-center">
           {centersDetails.slice(0, 3).map((td, index) => (
@@ -23,12 +24,19 @@ const TournamentDetail = () => {
         </div>
       </nav>
       <hr />
-      <section className="px-4 mt-6">
+      <section className="px-4 mt-6 text-cyan-900">
         <div className="mt-[5%]">
           {centersDetail[0].content.map((detail, index) => (
             <div className="my-4 md:px-[15%]" key={index}>
-              <h1 className="text-[23px] font-extrabold text-[#000]">{detail.ruleTitle}</h1>
-              <p>{detail.ruleDesc}</p>
+              <h1 className="text-[23px] text-cyan-900 font-extrabold text-[#000]">{detail.ruleTitle}</h1>
+              <h1 className="">{detail.subRule}</h1>
+              <div  className="px-4 md:px-16 flex items-start md:items-center gap-2 mt-5">
+                <div className='mr-5'>
+                  < FaCheckDouble />
+                </div>
+                <p>{detail.ruleDesc}</p>
+              </div>
+
             </div>
           ))}
         </div>

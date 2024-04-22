@@ -23,13 +23,13 @@ const ParticipantsDetail = () => {
         </div>
       </nav>
       <hr />
-      <section className="px-4 mt-6">
+      <section className="px-4 mt-6 text-cyan-900 ">
         <div className="mt-[5%] ">
           {tournamentDetail[0].content.map(detail => (
             <div className="my-4 md:px-[15%]">
-              <h1 className="text-[23px] font-extrabold text-[#000]">{detail.ruleTitle}</h1>
-              <p>{detail.ruleDesc}</p>
-              <p>{detail.subRule1}</p>
+              <h1 className="text-[23px] text-cyan-900 font-extrabold text-[#000]">{detail.ruleTitle}</h1>
+              <p className='mt-3'>{detail.ruleDesc}</p>
+              <p className='mt-3'>{detail.subRule1}</p>
               <p>{detail.subRule2}</p>
               <p>{detail.subRule3}</p>
             </div>
