@@ -397,7 +397,7 @@ const Homepage = () => {
           </div>
         </section>
 
-        <section className=''>
+        <section className='k'>
           <div className=''>
             <div className='text-center'>
               <h1 className='font-bold text-4xl md:text-5xl my-4 mt-44'>Afec 2024</h1>
