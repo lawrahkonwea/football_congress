@@ -91,7 +91,8 @@ const Navigation = () => {
           <div className='flex justify-between items-center text-center bg bg-orange-400 w-full  py-2 px-12 text-white font-sans'>
             <div className='hidden lg:flex text-3xl '> <FcGlobe /></div>
             <div className='flex items-center text-center justify-between '>
-              <h3 className=''>AFEC Football 2024 now fully Open!</h3>
+            <Link to={`/centers_details/centers_1_abcghy`} className=' text-white hover:text-violet-600 active:text-violet-700' >Kick off for U-17 NAPPS Begins. HERE!</Link>
+              {/* <h3 className=''></h3> */}
             </div>
             <div className='hidden lg:flex'>
               <NavLink to="/register">Register with us!</NavLink>
@@ -135,10 +136,11 @@ const Navigation = () => {
 
             {/* sidebar mobile menu */}
             <div className={clsx(
-              'fixed h-screen w-screen lg:hidden top-0 right-0 -translate-x-full transition-all', sideMenuOpen && 'translate-x-0'
+              'fixed h-screen w-screen lg:hidden top-0 left-0 -translate-x-full transition-all', sideMenuOpen && 'translate-x-0'
             )}
+            
             >
-              <section className='overflow-y-auto  bg-white rounded-lg flex-col absolute left-4 top-4 h-5/6 w-11/12 p-8 gap-8 z-50 flex '>
+              <section className='overflow-y-auto bg-white rounded-lg flex-col absolute left-4 top-4 h-5/6 w-11/12 p-8 gap-8 z-50 flex '>
                 <div className='flex justify-between'>
                   <RiCloseLine onClick={() => setMenu(false)} className='mt-2 text-3xl cursor-pointer' />
                   <img className='w-12' src={logo} alt='ball' /></div>

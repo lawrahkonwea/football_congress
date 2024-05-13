@@ -38,7 +38,7 @@ const About = () => {
               <h1 className='text-sky-950 text-5xl font-bold'>AFEC Football</h1>
               <h2 className='text-sky-600 text-4xl mt-2 font-bold'>Empowerment Congress</h2>
               </div>
-              <p className='mt-5'>AFEC stands as a beacon of global youth football, recognized as the largest and most diverse tournament of its kind. With participation spanning across 80 nations, approximately 1700 teams unite on the field, igniting passion and camaraderie through 4500 exhilarating matches across 110 pitches.</p>
+              <p className='mt-5'>AFEC stands as a beacon of global teen and youth football, recognized as the largest and most diverse tournament of its kind. With participation spanning across 50 colleges, approximately 100 teams unite on the field, igniting passion and camaraderie through 200 exhilarating matches across 32 pitches.</p>
             </div>
 
             <div className="w-full md:md:ml-16 items-center text-center">

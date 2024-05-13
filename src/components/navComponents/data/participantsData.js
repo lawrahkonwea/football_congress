@@ -21,11 +21,11 @@ export const participantsData = [
       },
       {
         ruleTitle: "3. Playing Period",
-        ruleDesc: "First half 45 minutes and second half 45 minutes.",
+        ruleDesc: "First half 30 minutes and second half 30 minutes.",
       },
       {
         ruleTitle: "4. Numbers of players and substitution.",
-        subRule1: <p><b className={style.num}>4.1</b> Each team can register 20 players with 4 officials, teams have the right to substitute 4 players in a match, eleven players on the pitch and Four substitutes, A substituted may re-enter in the match.Substitutions can't be done without stopping the match.Notice that the match has to be stopped and the referee has to be informed at the substitution of a player. All substitutions should be done within the technical area of the team. If there is no technical area the substitution should be made at the center line. The player that will be substituted has to leave the pitch before the new player can enter the pitch. Incorrect substitutions will be punished with a yellow card.</p>,
+        subRule1: <p><b className={style.num}>4.1</b> Each team can register 20 players with 4 officials, teams have the right to substitute 4 players in a match, eleven players on the pitch and Four substitutes, A substituted player will not re-enter in the match. Substitutions can't be done without stopping the match. Notice that the match has to be stopped and the referee has to be informed at the substitution of a player. All substitutions should be done within the technical area of the team. If there is no technical area the substitution should be made at the center line. The player that will be substituted has to leave the pitch before the new player can enter the pitch. Incorrect substitutions will be punished with a yellow card.</p>,
       },
       {
         ruleTitle: "5. Proof of participant list.",
@@ -42,7 +42,7 @@ export const participantsData = [
       },
       {
         ruleTitle: "8. Before, during and after the match",
-        ruleDesc: "All teams should be ready at the pitch no later than 15 minutes before kick-off.The team manager make sure that his or her player are adequately insured. All players must wear shin guards.The teams are responsible for their supporter's conduct, bad supporter's behavior or conduct can result in team's official (coach) must immediately after the match sign the referee match card in order to confirm the match result, red cards and other events during the match. Failure to sign may result in a notification to the AFRICA FOOTBALL EMPOWERMENT CONGRESS official's competition jury.",
+        ruleDesc: "All teams should be ready at the pitch no later than 15 minutes before kick-off.The team manager make sure that his or her player are adequately insured. All players must wear shin guards.The teams are responsible for their supporter's conduct, bad supporter's behavior or conduct will results in the teams disqualification or reduction of points. The team's official (coach) must immediately after the match sign the referee match card in order to confirm the match result, red cards and other events during the match. Failure to sign may result in a notification to the AFRICA FOOTBALL EMPOWERMENT CONGRESS official's competition jury.",
       },
       {
         ruleTitle: "9. Balls",
@@ -79,9 +79,9 @@ export const participantsData = [
     desc: "The most important information about the tournament",
     content: [
       {
-        ruleTitle: "Competition rules",
-        ruleDesc: "Unavailable for now",
-        subRule1: "Coming soon"
+        ruleTitle: "IMPORTANT NOTICE:",
+        ruleDesc: "Kickoff for the U-17 Boy's NAPPS inter school tournament begins, July 27th - August 10th, ",
+        subRule1: "at Yaba College of Technology."
       }
     ],
     id: "tournament_2_abcxq1z",

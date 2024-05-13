@@ -3,7 +3,7 @@
 // const style = {
 //   num: "block my-2"
 // }
-
+// import Underseventeen from "../../../assets/underseventeen.jpg"
 export const tournamentData = [
   {
     title: 'The Centers',
@@ -77,6 +77,12 @@ export const tournamentData = [
     title: 'Participating Schools',
     desc: 'Tournament participants',
     content: [
+      {
+        titleMain: "IMPORTANT NOTICE:",
+        titleName: "Kickoff for the U-17 Boy's NAPPS inter school tournament begins July 27th - August 10th, at Yaba College of Technology. ",
+        image: "../../../assets/underseventeen.jpg",
+
+      },
       {
         ruleTitle: " U-17 boy's football tournament.",
         subRule: "The List of International School (AISEN). That's expected to participate in this year's 2024, Africa Football Empowerment Congress (AFEC).",

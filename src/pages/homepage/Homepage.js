@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
-import { tournamentData } from '../../components/navComponents/data/tournamentData';
 import { useLocation, Link } from 'react-router-dom';
 import { ReactComponent as List } from '../../assets/svg/list terms.svg';
 import VideoBg from "../../assets/football-video.mp4";
@@ -33,12 +32,10 @@ import { Typed } from 'react-typed';
 import { FaRegCommentDots } from "react-icons/fa6";
 import logo from "../../assets/AFEC LOGO 3.png";
 import Student from "../../assets/school pix.jpg"
-
+import Official from "../../assets/official partner.jpg"
 import "./index.css";
 
 const Homepage = () => {
-
-  const schools = tournamentData;
 
   const [ref, inView] = useInView({
     triggerOnce: false,
@@ -149,7 +146,7 @@ const Homepage = () => {
       icon: <BiLogoDribbble className='text-white' />,
     },
     {
-      title: <>Contact us</>,
+      title: <>Contact</>,
       icon: <MdOutlinePhonelinkRing className='text-white' />,
     },
   ]
@@ -227,7 +224,7 @@ const Homepage = () => {
           <div className="content absolute w-full h-full flex flex-wrap top-0 items-center flex-col justify-center mt-32">
             <p className='text-white mb-3 italic'>Aftermatch 2024 / Tournaments</p>
             <span className="px-4 text-white md:text-7xl text-3xl text-left lg:text-[72px] font-bold"></span>
-            <span className="px-[3px] text-orange-400 md:text-9xl text-4xl text-right lg:text-[72px] font-bold"></span>
+            <span className="px-[3px] text-orange-400 md:text-8xl text-4xl text-right lg:text-[72px] font-bold"></span>
 
             <div className="flex items-center justify-center gap-4 mt-4">
               <a href="https://www.facebook.com/samuelonyekajohnson?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer">
@@ -273,7 +270,7 @@ const Homepage = () => {
       <div className="px-4 mb-6">
         <div className="bg-gradient-to-r from-blue-80 to-blue-sky-500 flex mr-8 flex-col w-full justify-center mt-[40%] md:mt-[13%]">
           <div>
-            <h1 className='font-extrabold text-4xl md:mx-8 mt-3'>Latest News</h1>
+            <h1 className='font-extrabold text-3xl md:mx-6 mt-4'>Latest News</h1>
           </div>
           <div className="flex items-center gap-2">
             <button
@@ -383,16 +380,11 @@ const Homepage = () => {
           <div className='px-4'>
             <div className='text-center items-start'>
               <div className=''>
-              <h1 className='animate__animated animate__bounce animate__slower animate__infinite font-bold text-4xl md:text-4xl my-4 mt-16'>AFEC Participants, 2024</h1>
+              <h1 className='animate__animated animate__bounce animate__slower animate__infinite font-bold text-3xl md:text-4xl my-4 mt-16'>AFEC Participants, 2024</h1>
               <img className='mt-4 custom-shadow inline-block w-full h-auto md:h-auto md:w-[800px] rounded-lg mb-2 object-cover object-center' src={Student} alt='student' />
               <p className='mt-5 text-md md:text-lg mx-4 sm:mx-12 md:mx-20 md:px-12 lg:px-40 mx-36'>The List of International School (AISEN). These schools are expected to participate in this year's 2024 Africa Football Empowerment Congress (AFEC) U-17 boy's football tournament.</p>
               </div>
-             
-              <div className='items-start'>
-                {schools.map((evnt, index) => (
-                  <Link to={`/centers_details/centers_1_abcghy`} className=' text-blue-500' key={index}>READ MORE</Link>
-                ))}
-              </div>
+                  <Link to={`/centers_details/centers_1_abcghy`} className=' text-blue-500' >Read More</Link>
             </div>
           </div>
         </section>
@@ -423,6 +415,15 @@ const Homepage = () => {
           </div>
         </section>
 
+              <section>
+                <div className='px-4'>
+                  <div className='text-center items-start'>
+                  <h1 className='text-2xl md:text-3xl my-4  mt-24 text-slate-500'>Official Partner</h1>
+                  <img className='mt-4 custom-shadow inline-block w-full h-auto md:h-auto md:w-[300px] rounded-lg mb-2 object-cover object-center' src={Official} alt='student' />
+                  </div>
+                </div>
+                  
+              </section>
 
         <section className='bg-gradient-to-r from-blue-50 to-blue-sky-400'>
           <div className='text-center px-12 mt-44'>
