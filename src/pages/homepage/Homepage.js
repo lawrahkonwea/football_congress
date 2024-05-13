@@ -355,7 +355,7 @@ const Homepage = () => {
             <p className='text-blue-600 text-lg mt-8'>What We Do</p>
             <h1 className='text-2xl sm:text-3xl md:text-4xl font-bold'>Our main events</h1>
             <h3 className='mt-3 text-slate-500 text-md md:text-lg mx-4 sm:mx-12 md:mx-20 md:px-12 lg:px-40 mx-36'>
-              We believe that it is important to make a tournament a lifelong memory. With moments for everyone – moments of harmony and fellowship - moments where everyone comes together.
+              We believe that it is important to make a tournament lifelong memory. With moments for everyone – moments of harmony and fellowship - moments where everyone comes together.
             </h3>
           </div>
           <div className=" main-event items-center py-2 grid grid-cols-1 md:grid-cols-2 gap-8 h-full w-full md:px-6 justify-center gap-6 my-8 ">
