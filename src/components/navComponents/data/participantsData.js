@@ -16,7 +16,7 @@ export const participantsData = [
       {
         ruleTitle: "2. Competition rules",
         subRule1: <p><b className={style.num}>2.1</b> Any football team is free to register in this tournament programme e.g. School teams can parti cipate and football club that register National Football  Association can participate too. All players must be registered with the club they are playing for. Please note that the player cannot register for more than one team in the tournament.</p>,
-        subRule2: <p><b className={style.num}>2.2</b> The (32) teams will be divided into groups of eight(8) From group (A-H). Each  group consist of 4 teams. Three (3) points will be awarded for a win, 1 point for  draw and 0 points for a loss. If two or more teams have the same number of points in the same group, the  order will be decided as follows: * Goal difference  * Highest number of goals scored * Results in the match(es) between teams with equal points (head to head) * Penalty shoot-out according to the FIFA rules</p>,
+        subRule2: <p><b className={style.num}>2.2</b> The (40) teams will be divided into groups of TEN(10) From group (A-I). Each  group consist of 4 teams. Three (3) points will be awarded for a win, 1 point for  draw and 0 points for a loss. If two or more teams have the same number of points in the same group, the  order will be decided as follows: * Goal difference  * Highest number of goals scored * Results in the match(es) between teams with equal points (head to head) * Penalty shoot-out according to the FIFA rules</p>,
         subRule3: <p><b className={style.num}>2.3</b> All playoff games will be advised by the cup system, i.e. two teams will qualify from each group e.g. A-H to last sixteen (16) according to FIFA rules The two teams that tpgroup A, will play the Two teams that top group B. The two teams that top group group C will play with D. Group E will play F. Group F will play H.</p>,
       },
       {
@@ -80,7 +80,7 @@ export const participantsData = [
     content: [
       {
         ruleTitle: "IMPORTANT NOTICE:",
-        ruleDesc: "Kickoff for the U-17 Boy's NAPPS inter school tournament begins, July 27th - August 10th, ",
+        ruleDesc: "Kickoff for the U-17 Boy's NAPPS inter school tournament begins, October 19th- October 26th, 2024 ",
         subRule1: "at Yaba College of Technology."
       }
     ],

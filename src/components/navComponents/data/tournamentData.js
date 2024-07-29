@@ -27,7 +27,7 @@ export const tournamentData = [
       //   subRule1: <p><b className={style.num}>4.1</b></p>,
       // },
       // {
-      //   ruleTitle: "",
+      //ruleTitle: "",
       //   ruleDesc: "",
       // },
       // {
@@ -79,7 +79,7 @@ export const tournamentData = [
     content: [
       {
         titleMain: "IMPORTANT NOTICE:",
-        titleName: "Kickoff for the U-17 Boy's NAPPS inter school tournament begins July 27th - August 10th, at Yaba College of Technology. ",
+        titleName: "Kickoff for the U-17 Boy's NAPPS inter school tournament will be on October 19th - October 26th 2024 at Yaba College of Technology Lagos. GET READY!!!!",
         image: "../../../assets/underseventeen.jpg",
 
       },

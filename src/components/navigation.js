@@ -91,7 +91,7 @@ const Navigation = () => {
           <div className='flex justify-between items-center text-center bg bg-orange-400 w-full  py-2 px-12 text-white font-sans'>
             <div className='hidden lg:flex text-3xl '> <FcGlobe /></div>
             <div className='flex items-center text-center justify-between '>
-            <Link to={`/centers_details/centers_1_abcghy`} className=' text-white hover:text-violet-600 active:text-violet-700' >Kick off for U-17 NAPPS Begins. HERE!</Link>
+            <Link to={`/centers_details/centers_1_abcghy`} className=' text-white hover:text-violet-600 active:text-violet-700' >Kick off for U-17 NAPPS</Link>
               {/* <h3 className=''></h3> */}
             </div>
             <div className='hidden lg:flex'>
