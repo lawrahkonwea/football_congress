@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useLocation, Link } from 'react-router-dom';
 import { ReactComponent as List } from '../../assets/svg/list terms.svg';
 import VideoBg from "../../assets/football-video.mp4";
-import Femaleaction from "../../assets/grassroot_female.jpg";
+import Kanu from "../../assets/Kanu.jpg";
 import Streetphoto from "../../assets/napps.jpg";
 import Singleplayer from "../../assets/singleplayer-replace.jpg"
 import Throwplayer from "../../assets/throwplayer.jpg";
@@ -51,9 +51,9 @@ const Homepage = () => {
   const [cards] = useState([
     { id: 1, subTitle: 'Afec Football', title: 'Who might you play against??', image: Singleplayer, text: 'Get ready to face off against a diverse range of opponents! Whether its a fierce competitor, A longtime rival, or a mysterious newcomer, the competition is heating up.', date: '27th, July 2024.' },
     { id: 2, subTitle: 'Afec Football', title: 'NAAPS U-17 Tournament', image: Streetphoto, text: 'NAAPS U-17 private school tournament produced one of the highest youth gathering in Lagos, where parents, fans, supporters all gathered to cheer. It was one beautiful experience.', date: '20th, Feb 2024.' },
-    { id: 3, subTitle: 'Meet the world', title: '13th African Games Accra', image: Femaleplayer, text: ' Set against the backdrop of empowerment and athleticism, the event was a fierce competition and unforgettable moments on the field. Stay tuned as female athletes showcase their talent and passion for the beautiful game.', date: '20th, March 2024.' },
-    { id: 4, subTitle: 'Afec Football', title: 'New Football Tournament to kickoff', image: Throwplayer, text: 'The tournament schdeuled for October this year is set to commence in ikorodu and will bear the nameAyangbure of Ikorodu', date: '4th, March 2024.' },
-    { id: 5, subTitle: 'Afec Football', title: 'Football association in Conjunction with Lagos State', image: Femaleaction, text: 'The Lagos State Football Association held a seminar in conjunction with Lagos State Domestic and Sexual Violence Agency for the girl child', date: '18th, March 2024.' },
+    { id: 3, subTitle: 'Afec Football', title: 'Afec President with Nigerias football Legend', image: Kanu, text: 'Afec presifdent along side our Nigerian football legend Kanu Nwankwo with one of Afecs official. Here Kanu was commending us for creating such a great avenue where Nigeria football can pick Grassroot players from private schools. This Kind of opportunity has been lacking and its great to watch such happen for players', date: '29th, July 2024.' },
+    { id: 4, subTitle: 'Meet the world', title: 'Football association in Conjunction with Lagos State', image: Femaleplayer, text: ' Set against the backdrop of empowerment and athleticism, the event was a fierce competition and unforgettable moments on the field. Stay tuned as female athletes showcase their talent and passion for the beautiful game.', date: '20th, March 2024.' },
+    { id: 5, subTitle: 'Afec Football', title: 'New Football Tournament to kickoff', image: Throwplayer, text: 'The tournament schdeuled for October this year is set to commence in ikorodu and will bear the nameAyangbure of Ikorodu', date: '4th, March 2024.' },
   ]);
 
   const boxRef = useRef(null);
